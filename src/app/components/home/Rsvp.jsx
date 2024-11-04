@@ -1,6 +1,36 @@
-import React from 'react';
+"use client"
+
+
+import React, { useState, useEffect } from 'react';
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 const Rsvp = () => {
+  // Define the list of images for the slider
+  const images = [
+    '/assets/images/rsvp_1.png',
+    '/assets/images/image_2.png',
+    '/assets/images/image_4.png',
+  ];
+
+  // State to keep track of the current slide index
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Function to handle next slide
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+  };
+
+  // Function to handle previous slide
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
+  };
+
+  // Auto-slide effect
+  useEffect(() => {
+    const autoSlide = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    return () => clearInterval(autoSlide); // Clear interval on unmount
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 py-12">
       {/* Header Section */}
@@ -13,72 +43,45 @@ const Rsvp = () => {
         {/* Wedding Photo */}
         <div className="relative">
           <img
-            src="/assets/images/rsvp_1.png"
+            src={images[currentSlide]}
             alt="Wedding couple"
             className="w-full rounded-t-lg"
           />
-          
-          {/* Green Overlay Section */}
-          <div className="bg-[#014421] p-8 rounded-b-lg hidden">
-            <div className="text-center text-sm mb-6">
-              <p>THE FAMILIES OF ADLI TAKAYI AND KOFOWOROLA</p>
-              <p className="text-yellow-400">Wish to invite you to the holy matrimony of their son</p>
-            </div>
 
-            <div className="text-center mb-6">
-              <div className="flex justify-center items-center gap-2">
-                <span>SATURDAY</span>
-                <span className="text-yellow-400 text-xl">06</span>
-                <span>11:30AM</span>
-              </div>
-            </div>
-
-            <div className="text-center italic">
-              <h2 className="text-2xl mb-2">King Vincente</h2>
-              <p className="text-lg">and</p>
-              <h2 className="text-2xl">Precious Eshun</h2>
-            </div>
-          </div>
         </div>
 
-        {/* Navigation Dots */}
-        <div className="flex justify-center gap-2 mt-6 mb-8">
-          <button className="w-6 h-1 bg-gray-600 rounded-full"></button>
-          <button className="w-6 h-1 bg-white rounded-full"></button>
-          <button className="w-6 h-1 bg-gray-600 rounded-full"></button>
-          <button className="w-6 h-1 bg-gray-600 rounded-full"></button>
-          <button className="w-6 h-1 bg-gray-600 rounded-full"></button>
+        {/* Navigation Dots and Arrows */}
+        <div className="flex items-center justify-center space-x-4 mt-8">
+          <button
+            onClick={prevSlide}
+            className="text-xl text-gray-400 hover:text-white"
+          >
+            <FaLongArrowAltLeft />
+          </button>
+          <div className="flex space-x-2">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`h-2 w-2 rounded-full ${
+                  index === currentSlide ? 'bg-yellow-400' : 'bg-gray-400'
+                }`}
+              ></div>
+            ))}
+          </div>
+          <button
+            onClick={nextSlide}
+            className="text-xl text-gray-400 hover:text-white"
+          >
+           <FaLongArrowAltRight/>
+          </button>
         </div>
 
         {/* RSVP Button */}
         <div className="flex justify-center mb-12">
-          <button className="bg-white text-black px-8 py-2 rounded-full">
+          <button className="mt-8 px-8 py-2 bg-white text-green-900 rounded-full shadow-md font-bold">
             RSVP
           </button>
         </div>
-
-        {/* Logo */}
-        <div className="flex justify-center mb-12">
-          <img
-            src="/assets/images/logo.png"
-            alt="Company logo"
-            className="w-12 h-12"
-          />
-        </div>
-
-        {/* Contact Information */}
-        {/* <div className="grid grid-cols-2 gap-4 ">
-          <div className="border border-white/20 rounded-lg p-6">
-            <h3 className="text-xl italic mb-4">Contact us</h3>
-            <p className="text-sm mb-2">Glamorousspacesbyfave@gmail.com</p>
-            <p className="text-sm">+234 8166734100</p>
-          </div>
-          <div className="border border-white/20 rounded-lg p-6">
-            <h3 className="text-xl italic mb-4">Working hours</h3>
-            <p className="text-sm mb-2">Monday - Friday: 8:00am - 6pm</p>
-            <p className="text-sm">Saturday - Sunday: 1:00pm - 6pm</p>
-          </div>
-        </div> */}
       </div>
     </div>
   );
