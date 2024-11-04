@@ -15,7 +15,7 @@ const Contacts = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-white px-4">
-        {/* Contact and Working Hours */}
+      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Us */}
           <div className="border border-white rounded-sm p-8 text-center backdrop-blur-sm">
