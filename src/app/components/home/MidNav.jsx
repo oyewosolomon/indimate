@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const MidNav = () => {
   return (
@@ -11,7 +12,7 @@ const MidNav = () => {
            
            <div>
                 <a href="">
-                    <img className='w-28 h-28' src="/assets/images/logo.png" alt="Logo" />
+                    <Image className='w-28 h-28' src="/assets/images/logo.png" alt="Logo" />
                 </a>
             </div>
 

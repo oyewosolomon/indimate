@@ -30,7 +30,7 @@ const Services = () => {
         </p>
         
         <p className="text-lg md:text-xl leading-relaxed opacity-90">
-          We'll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
+          We&apos;ll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
         </p>
       </div>
 

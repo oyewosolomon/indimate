@@ -1,6 +1,7 @@
 "use client"
 
 
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
@@ -42,7 +43,7 @@ const Rsvp = () => {
       <div className="max-w-lg w-full relative">
         {/* Wedding Photo */}
         <div className="relative">
-          <img
+          <Image
             src={images[currentSlide]}
             alt="Wedding couple"
             className="w-full rounded-t-lg"

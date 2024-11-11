@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const ContactUs = () => {
   return (
@@ -9,7 +10,7 @@ const ContactUs = () => {
       
       <div className="mb-8">
         <div className="relative w-64 h-80 mx-auto">
-          <img 
+          <Image
             src="/assets/images/woman.png"
             alt="Wedding Photographer"
             className="rounded-lg object-cover w-full h-full"

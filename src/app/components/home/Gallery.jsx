@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 
 const Gallery = () => {
   return (
@@ -13,7 +14,7 @@ const Gallery = () => {
         
           
           <div className="h-64 relative overflow-hidden rounded-lg">
-            <img 
+            <Image 
               src="/assets/images/Group_7685.png" 
               alt="Wedding couple" 
               className="object-cover w-full h-full"
@@ -38,7 +39,7 @@ const Gallery = () => {
           </p>
         </div>
         <div className="relative h-96 rounded-lg overflow-hidden">
-          <img 
+          <Image 
             src="/assets/images/image_6.png" 
             alt="Cocktail preparation" 
             className="object-cover w-full h-full"
