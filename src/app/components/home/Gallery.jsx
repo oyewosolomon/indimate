@@ -18,6 +18,8 @@ const Gallery = () => {
               src="/assets/images/Group_7685.png" 
               alt="Wedding couple" 
               className="object-cover w-full h-full"
+              width={100}
+              height={100}
             />
           </div>
        
@@ -43,6 +45,8 @@ const Gallery = () => {
             src="/assets/images/image_6.png" 
             alt="Cocktail preparation" 
             className="object-cover w-full h-full"
+            width={100}
+            height={100}
           />
         </div>
       </div>

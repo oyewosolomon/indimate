@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const Welcome = () => {
@@ -19,10 +20,12 @@ const Welcome = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* First Image */}
           <div className="aspect-[4/5] overflow-hidden rounded-lg">
-            <img
+            <Image
               src="/assets/images/image_3.png"
               alt="Beachside wedding arch with flowers"
               className="w-full h-full object-cover"
+              width={100}
+              height={100}
             />
           </div>
   

@@ -14,6 +14,8 @@ const ContactUs = () => {
             src="/assets/images/woman.png"
             alt="Wedding Photographer"
             className="rounded-lg object-cover w-full h-full"
+            width={100}
+            height={100}
           />
         </div>
       </div>

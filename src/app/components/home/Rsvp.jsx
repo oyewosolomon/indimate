@@ -47,6 +47,8 @@ const Rsvp = () => {
             src={images[currentSlide]}
             alt="Wedding couple"
             className="w-full rounded-t-lg"
+            width={100}
+            height={100}
           />
 
         </div>
