@@ -3,9 +3,9 @@ import React from 'react'
 
 const Welcome = () => {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-16 bg-white text-gray-800">
         {/* Hero Text Section */}
-        <div className="text-center mb-16 space-y-6">
+        <div className="text-center mb-16 space-y-6 bg-white text-gray-800">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gray-800 leading-relaxed">
             Dreamy, Ethereal, Curated for the
             <br />
