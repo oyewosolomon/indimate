@@ -14,9 +14,9 @@ export default function Venue() {
 
       {/* Overlay Text */}
       <div className="flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="text-3xl md:text-6xl mb-16">Venue Capacity</h1>
+        <h1 className="text-5xl md:text-6xl mb-16">Venue Capacity</h1>
         
-        <div className="flex items-center space-x-28">
+        <div className="flex items-center space-x-14 md:space-x-28">
           <div>
             <h1 className="text-4xl md:text-6xl mb-8 font-light">50 people</h1>
             <p className="text-md md:text-lg">Theatre Settings</p>
