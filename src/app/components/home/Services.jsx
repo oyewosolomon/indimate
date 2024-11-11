@@ -12,7 +12,7 @@ const ServiceCard = ({ title, backgroundImage }) => (
     <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] group-hover:bg-black/50 transition-all duration-300"/>
     <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <span className="text-sm tracking-wider opacity-80">TAP TO READ</span>
+      <span className="text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
     </div>
   </div>
 );
