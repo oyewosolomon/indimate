@@ -11,7 +11,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
 
   return (
     <div 
-      className="relative justify-start h-96 border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
+      className="relative justify-start h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -22,9 +22,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
       {/* Overlay */}
       <div className={`absolute inset-0 transition-all duration-300 ${isContentVisible ? "bg-white" : "bg-black/40 group-hover:bg-black/50"}`}>
         {isContentVisible ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-900 p-6">
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
-          <div className="text-sm text-center space-y-2">
+          <div className="absolute inset-0 flex flex-col items-center justify-start text-gray-900 p-6">
+          
+          <div className="text-md text-left space-y-2 items-start justify-start">
             {content.map((item, index) => {
               if (item.type === "p") {
                 return <p key={index}>{item.text}</p>;
@@ -36,7 +36,6 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
               return null;
             })}
           </div>
-          <span className="mt-4 text-sm font-semibold text-[#D4A300]">TAP TO HIDE</span>
         </div>
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
