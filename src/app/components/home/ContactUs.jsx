@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const ContactUs = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16 text-center">
+    <div className="max-w-4xl bg-white text-black mx-auto px-6 py-16 text-center">
       <h1 className="font-serif text-3xl md:text-4xl mb-8 tracking-wide">
         Intimate weddings by Fave
       </h1>
