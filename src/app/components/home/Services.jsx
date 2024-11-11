@@ -127,7 +127,7 @@ const Services = () => {
       {/* Our Services Section */}
       <div className="max-w-6xl mx-auto mb-20">
         <h1 className="text-5xl text-center mb-12">Our Services</h1>
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard 
               key={index}
@@ -142,7 +142,7 @@ const Services = () => {
       {/* Our Process Section */}
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl text-center mb-12">Our Process</h1>
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-6">
           {processData.map((process, index) => (
             <ServiceCard 
               key={index}
