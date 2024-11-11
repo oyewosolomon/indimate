@@ -24,7 +24,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
         {isContentVisible ? (
           <div className="absolute inset-0 flex flex-col items-center justify-start text-gray-900 p-2 md:p-6">
           
-          <div className="text-md sm:text-md md:text-md lg:text-md overflow-y-auto text-left space-y-2 px-3 items-start justify-start">
+          <div className="text-md sm:text-md md:text-md lg:text-md overflow-y-auto md:overflow-y-hidden text-left space-y-2 px-3 items-start justify-start">
             {content.map((item, index) => {
               if (item.type === "p") {
                 return <p key={index}>{item.text}</p>;
