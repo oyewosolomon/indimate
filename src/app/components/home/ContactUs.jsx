@@ -4,7 +4,7 @@ import Image from 'next/image'
 const ContactUs = () => {
   return (
     <div className="max-w-8xl bg-white text-black mx-auto px-6 py-16 text-center">
-      <h1 className="text-4xl md:text-7xl mb-8">
+      <h1 className="text-5xl md:text-7xl mb-8">
         Intimate weddings by Fave
       </h1>
       
