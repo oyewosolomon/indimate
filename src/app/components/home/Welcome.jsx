@@ -17,7 +17,7 @@ const Welcome = () => {
         </div>
   
         {/* Image Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8">
           {/* First Image */}
           <div className="aspect-[4/5] overflow-hidden rounded-lg">
             <Image
