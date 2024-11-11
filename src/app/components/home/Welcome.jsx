@@ -11,7 +11,7 @@ const Welcome = () => {
             Unconventional Couple
           </h1>
           <p className="text-xl text-gray-600">
-            We are so happy to have you here, and you've come to the right place.
+            We are so happy to have you here, and you&apos;ve come to the right place.
           </p>
         </div>
   

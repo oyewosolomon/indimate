@@ -31,10 +31,10 @@ const Gallery = () => {
           <h2 className="text-3xl italic font-serif">Our private dinning space</h2>
           <h3 className="text-xl font-semibold">Exciting News for Wedding Clients!</h3>
           <p className="text-gray-700">
-            We're thrilled to announce a special offer for our private dining space! When you book us to plan your wedding, you can now enjoy exclusive discounts on our intimate venue for all your pre-wedding celebrations, such as bridal showers, engagement parties, and pre-wedding photoshoots.
+            We&apos;re thrilled to announce a special offer for our private dining space! When you book us to plan your wedding, you can now enjoy exclusive discounts on our intimate venue for all your pre-wedding celebrations, such as bridal showers, engagement parties, and pre-wedding photoshoots.
           </p>
           <p className="text-gray-700">
-            Transform your special moments into unforgettable experiences in our beautifully designed space, perfect for small gatherings. This limited-time offer makes it easier than ever to celebrate your journey to "I do." Contact us to learn more and secure your date!
+            Transform your special moments into unforgettable experiences in our beautifully designed space, perfect for small gatherings. This limited-time offer makes it easier than ever to celebrate your journey to &quot;I do.&quot; Contact us to learn more and secure your date!
           </p>
         </div>
         <div className="relative h-96 rounded-lg overflow-hidden">
