@@ -13,15 +13,16 @@ const Gallery = () => {
       <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-16">
         
           
-          <div className="h-64 relative overflow-hidden rounded-lg">
-            <Image 
-              src="/assets/images/Group_7685.png" 
-              alt="Wedding couple" 
-              className="object-cover w-full h-full"
-              width={100}
-              height={100}
-            />
-          </div>
+      <div className="relative overflow-hidden rounded-lg">
+        <Image 
+          src="/assets/images/Group_7685.png" 
+          alt="Wedding couple" 
+          className="object-cover w-full h-full"
+          layout="responsive"
+          width={100}
+          height={160}
+        />
+      </div>
        
       </div>
 
