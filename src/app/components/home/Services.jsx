@@ -11,7 +11,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
 
   return (
     <div 
-      className="relative justify-start h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
+      className="relative justify-start h-[15rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -22,9 +22,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
       {/* Overlay */}
       <div className={`absolute inset-0 transition-all duration-300 ${isContentVisible ? "bg-white" : "bg-black/40 group-hover:bg-black/50"}`}>
         {isContentVisible ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-start text-gray-900 p-6">
+          <div className="absolute inset-0 flex flex-col items-center justify-start text-gray-900 p-2 md:p-6">
           
-          <div className="text-md text-left space-y-2 items-start justify-start">
+          <div className="text-md sm:text-md md:text-md lg:text-md overflow-y-auto text-left space-y-2 px-3 items-start justify-start">
             {content.map((item, index) => {
               if (item.type === "p") {
                 return <p key={index}>{item.text}</p>;
@@ -34,13 +34,13 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
               }
               // Add other formatting as needed, like `em`, `ul`, etc.
               return null;
-            })}
+            })} 
           </div>
         </div>
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
-            <span className="text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
+          <div className="absolute inset-0 flex flex-col text-center place-items-center place-content-center items-center justify-center text-white p-3 md:p-6">
+            <h3 className="text-sm md:text-xl font-semibold mb-2">{title}</h3>
+            <span className="text-[8px] md:text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
           </div>
         )}
       </div>
@@ -127,7 +127,7 @@ const Services = () => {
       {/* Our Services Section */}
       <div className="max-w-6xl mx-auto mb-20">
         <h1 className="text-5xl text-center mb-12">Our Services</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard 
               key={index}
@@ -142,7 +142,7 @@ const Services = () => {
       {/* Our Process Section */}
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl text-center mb-12">Our Process</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
           {processData.map((process, index) => (
             <ServiceCard 
               key={index}

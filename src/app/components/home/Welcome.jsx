@@ -17,9 +17,9 @@ const Welcome = () => {
         </div>
   
         {/* Image Gallery */}
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-8">
           {/* First Image */}
-          <div className="aspect-[4/5] overflow-hidden rounded-lg">
+          <div className="aspect-[4/5] overflow-hidden">
             <Image
               src="/assets/images/image_3.png"
               alt="Beachside wedding arch with flowers"
@@ -30,7 +30,7 @@ const Welcome = () => {
           </div>
   
           {/* Second Image */}
-          <div className="aspect-[4/5] overflow-hidden rounded-lg">
+          <div className="aspect-[4/5] overflow-hidden">
             <img
               src="/assets/images/image_1.png"
               alt="Bride against white backdrop"
@@ -39,7 +39,7 @@ const Welcome = () => {
           </div>
   
           {/* Third Image */}
-          <div className="aspect-[4/5] overflow-hidden rounded-lg">
+          <div className="aspect-[4/5] overflow-hidden">
             <img
               src="/assets/images/image_4.png"
               alt="Couple under floral arch"
