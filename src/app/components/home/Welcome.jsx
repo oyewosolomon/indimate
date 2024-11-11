@@ -6,12 +6,12 @@ const Welcome = () => {
       <div className="max-w-7xl mx-auto px-4 py-16 bg-white text-gray-800">
         {/* Hero Text Section */}
         <div className="text-center mb-16 space-y-6 bg-white text-gray-800">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gray-800 leading-relaxed">
+          <h1 className="text-4xl md:text-7xl font-medium text-gray-800 ">
             Dreamy, Ethereal, Curated for the
             <br />
             Unconventional Couple
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 font-inter">
             We are so happy to have you here, and you&apos;ve come to the right place.
           </p>
         </div>

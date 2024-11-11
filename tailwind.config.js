@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         gilroy: ['Gilroy', 'sans-serif'],
+        inter: 'var(--font-inter)',
       },
       colors: {
         background: "var(--background)",

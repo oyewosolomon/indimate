@@ -126,7 +126,7 @@ const Services = () => {
 
       {/* Our Services Section */}
       <div className="max-w-6xl mx-auto mb-20">
-        <h2 className="text-3xl font-serif text-center italic mb-12">Our Services</h2>
+        <h1 className="text-5xl text-center mb-12">Our Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard 
@@ -141,7 +141,7 @@ const Services = () => {
 
       {/* Our Process Section */}
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-serif text-center italic mb-12">Our Process</h2>
+        <h1 className="text-5xl text-center mb-12">Our Process</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {processData.map((process, index) => (
             <ServiceCard 

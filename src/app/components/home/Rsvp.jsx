@@ -9,8 +9,6 @@ const Rsvp = () => {
   // Define the list of images for the slider
   const images = [
     '/assets/images/rsvp_1.png',
-    '/assets/images/image_2.png',
-    '/assets/images/image_4.png',
   ];
 
   // State to keep track of the current slide index
@@ -35,8 +33,8 @@ const Rsvp = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 py-12">
       {/* Header Section */}
-      <div className="text-center mb-8 italic">
-        <h1 className="text-2xl">Join us in celebrating forever</h1>
+      <div className="text-center mb-14 mt-16 italic">
+        <h1 className="text-6xl">Join us in celebrating forever</h1>
       </div>
 
       {/* Main Image and Content */}
@@ -46,9 +44,9 @@ const Rsvp = () => {
           <Image
             src={images[currentSlide]}
             alt="Wedding couple"
-            className="w-full rounded-t-lg"
-            width={100}
-            height={100}
+            className="w-full"
+            width={619.24}
+            height={774}
           />
 
         </div>

@@ -18,15 +18,15 @@ const Contacts = () => {
       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Us */}
-          <div className="border border-white rounded-sm p-8 text-center backdrop-blur-sm">
-            <h2 className="text-xl font-semibold italic mb-2">Contact us</h2>
+          <div className="border border-white rounded-md p-8 text-center backdrop-blur-sm">
+            <h1 className="text-6xl mb-3">Contact us</h1>
             <p className="mb-1">Glamorousspacesbyfave@gmail.com</p>
             <p>+234 8166734100</p>
           </div>
 
           {/* Working Hours */}
-          <div className="border border-white rounded-sm p-8 text-center backdrop-blur-sm">
-            <h2 className="text-xl font-semibold italic mb-2">Working hours</h2>
+          <div className="border border-white rounded-md p-8 text-center backdrop-blur-sm">
+            <h1 className="text-6xl mb-3">Working hours</h1>
             <p>Monday - Friday: 8:00am - 6pm</p>
             <p>Saturday - Sunday: 1:00pm - 6pm</p>
           </div>
