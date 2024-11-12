@@ -11,7 +11,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
 
   return (
     <div 
-      className="relative justify-start h-[15rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
+      className="relative justify-start h-[15rem] md:h-[30rem] border-[1px] border-white rounded-2xl group cursor-pointer"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
