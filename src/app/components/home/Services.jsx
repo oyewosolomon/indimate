@@ -37,7 +37,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
   return (
     <AnimateOnScroll>
       <div 
-        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
+        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-xl md:rounded-xl overflow-hidden group cursor-pointer"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
