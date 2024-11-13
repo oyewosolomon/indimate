@@ -65,7 +65,7 @@ const Gallery = () => {
   const headerY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
 
   return (
-    <div ref={containerRef} className="w-full py-16 bg-white text-black">
+    <div ref={containerRef} className="w-full z-20 py-16 bg-white text-black">
       {/* Header Section with Fade Effect */}
       <motion.h1 
         className="text-7xl text-center mb-12"
@@ -93,7 +93,7 @@ const Gallery = () => {
       </motion.div>
 
       {/* Private Dining Section */}
-      <div className='max-w-7xl bg-white text-black mx-auto px-4 py-8'>
+      <div className='max-w-7xl z-20 bg-white text-black mx-auto px-4 py-8'>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <ScrollReveal>

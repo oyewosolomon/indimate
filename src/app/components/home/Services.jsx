@@ -76,7 +76,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-white z-50 md:hidden flex flex-col"
+          className="fixed inset-0 bg-white rounded-lg m-3 z-50 md:hidden flex flex-col"
         >
           <div className="flex justify-between items-center p-4 border-b">
             <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
@@ -96,7 +96,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
               backgroundPosition: "center",
             }}
           >
-            <div className="h-full flex flex-col justify-center space-y-4 text-left">
+            <div className="h-full flex flex-col justify-start space-y-4 text-left">
               {content.map((item, index) => {
                 if (item.type === "p") {
                   return <p key={index} className="text-base">{item.text}</p>;
@@ -176,7 +176,7 @@ const Services = () => {
 
   return (
     <div id="aboutus"
-      className="min-h-screen relative text-white py-16 px-4 md:px-8 bg-cover bg-center font-gilroy"
+      className="min-h-screen z-20 relative text-white py-16 px-4 md:px-8 bg-cover bg-center font-gilroy"
       style={{
         backgroundImage: `url('/assets/images/hero_background.png')`,
       }}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const MidNav = () => {
   return (
-    <div className='w-11/12'>
+    <div className='w-11/12 z-20'>
       <div className='grid grid-cols-3 items-center gap-4 px-4 py-2 w-full lg:px-12 lg:gap-10'>
         
         {/* Left Links */}

@@ -9,16 +9,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
-
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactUs = () => {
   const { toast } = useToast();
   const containerRef = useRef(null);
+  const imageRef = useRef(null);  // Reference for the image
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,6 +31,11 @@ const ContactUs = () => {
   const isInView = useInView(containerRef, { 
     once: true,
     amount: 0.2 
+  });
+
+  const imageInView = useInView(imageRef, {  // Check if image is in view
+    once: false,   // Allow repeated fades
+    amount: 0.5    // Trigger at 50% visibility
   });
 
   const handleInputChange = (e) => {
@@ -96,36 +101,7 @@ const ContactUs = () => {
     }
   };
 
-  const fadeUpVariants = {
-    hidden: { 
-      opacity: 0,
-      y: 30
-    },
-    visible: { 
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const imageVariants = {
-    hidden: { 
-      opacity: 0,
-      scale: 0.95
-    },
-    visible: { 
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut"
-      }
-    }
-  };
-
+  
   const buttonVariants = {
     hidden: { 
       opacity: 0,
@@ -147,6 +123,18 @@ const ContactUs = () => {
     }
   };
 
+
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1.5, ease: "easeOut" } },
+    fadeOut: { opacity: 0, scale: 0.95, transition: { duration: 1.5, ease: "easeIn" } }
+  };
+
   return (
     <motion.div 
       ref={containerRef}
@@ -162,7 +150,9 @@ const ContactUs = () => {
       </motion.h1>
       
       <motion.div 
+        ref={imageRef}  // Attach ref to monitor view status
         variants={imageVariants}
+        animate={imageInView ? "visible" : "fadeOut"}  // Apply fade-out when out of view
         className="mb-8 flex justify-center"
       >
         <div className="relative">
