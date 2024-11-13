@@ -1,13 +1,32 @@
 "use client"
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+// Animate components when they come into view
+const AnimateOnScroll = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const ServiceCard = ({ title, backgroundImage, content }) => {
   const [isContentVisible, setContentVisible] = useState(false);
 
   const handleToggleContent = () => {
     setContentVisible(!isContentVisible);
-    // Prevent body scroll when card is expanded on mobile
     if (!isContentVisible) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -16,7 +35,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
   };
 
   return (
-    <>
+    <AnimateOnScroll>
       <div 
         className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
         style={{
@@ -26,11 +45,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
         }}
         onClick={handleToggleContent}
       >
-        {/* Default View */}
         <div className={`absolute inset-0 transition-all duration-300 ${
           isContentVisible ? "md:bg-white" : "bg-black/40 group-hover:bg-black/50"
         }`}>
-          {/* Desktop Content View */}
           {isContentVisible ? (
             <div className="hidden md:flex absolute inset-0 flex-col items-center justify-start text-gray-900 p-2 md:p-6">
               <div className="text-md sm:text-md md:text-md lg:text-md overflow-y-auto md:overflow-y-hidden text-left space-y-2 px-3 items-start justify-start">
@@ -54,9 +71,13 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
         </div>
       </div>
 
-      {/* Mobile Full Screen Overlay */}
       {isContentVisible && (
-        <div className="fixed inset-0 bg-white z-50 md:hidden flex flex-col">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-white z-50 md:hidden flex flex-col"
+        >
           <div className="flex justify-between items-center p-4 border-b">
             <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
             <button 
@@ -67,6 +88,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
             </button>
           </div>
           <div 
+           onClick={handleToggleContent}
             className="flex-1 p-6 text-gray-900"
             style={{
               backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${backgroundImage})`,
@@ -86,9 +108,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimateOnScroll>
   );
 };
 
@@ -151,25 +173,32 @@ const Services = () => {
     }
   ];
 
+
   return (
-    <div
+    <div id="aboutus"
       className="min-h-screen relative text-white py-16 px-4 md:px-8 bg-cover bg-center font-gilroy"
       style={{
         backgroundImage: `url('/assets/images/hero_background.png')`,
       }}
     > 
-     {/* Hero Text Section */}
-     <div className="max-w-6xl mx-auto text-center mb-20">
-        <p className="leading-[2rem] md:leading-[3rem]  text-2xl md:text-4xl font-inter mb-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-6xl mx-auto text-center mb-20"
+      >
+        <p className="leading-[2rem] md:leading-[3rem] text-2xl md:text-4xl font-inter mb-8">
           With words like <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, we capture the essence of your dream wedding and bring it to life.
         </p>
-        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl font-inter  opacity-90">
+        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl font-inter opacity-90">
           We&apos;ll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
         </p>
-      </div>
+      </motion.div>
 
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl text-center mb-12">Our Services</h1>
+        <AnimateOnScroll>
+          <h1 className="text-5xl text-center mb-12">Our Services</h1>
+        </AnimateOnScroll>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard 
@@ -183,7 +212,9 @@ const Services = () => {
       </div>
 
       <div className="max-w-6xl mx-auto my-20">
-        <h1 className="text-5xl text-center mb-12">Our Process</h1>
+        <AnimateOnScroll>
+          <h1 className="text-5xl text-center mb-12">Our Process</h1>
+        </AnimateOnScroll>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {processData.map((service, index) => (
             <ServiceCard 

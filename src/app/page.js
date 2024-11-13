@@ -13,8 +13,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <MidNav />
-      <Welcome/>
+      
       <Services/>
       <Gallery/>
       <Venue/>
