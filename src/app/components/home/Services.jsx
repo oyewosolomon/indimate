@@ -18,7 +18,7 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
   return (
     <>
       <div 
-        className="relative justify-start h-[15rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
+        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-2xl overflow-hidden group cursor-pointer"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -151,24 +151,25 @@ const Services = () => {
     }
   ];
 
-
   return (
     <div
       className="min-h-screen relative text-white py-16 px-4 md:px-8 bg-cover bg-center font-gilroy"
       style={{
         backgroundImage: `url('/assets/images/hero_background.png')`,
       }}
-    > {/* Hero Text Section */}
-         <div className="max-w-4xl mx-auto text-center mb-20">
-        <p className="text-2xl md:text-3xl leading-relaxed mb-8 font-gilroy">
-          With words like <span className="font-semibold">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, we capture the essence of your dream wedding and bring it to life.
+    > 
+     {/* Hero Text Section */}
+     <div className="max-w-6xl mx-auto text-center mb-20">
+        <p className="leading-[2rem] md:leading-[3rem]  text-2xl md:text-4xl font-inter mb-8">
+          With words like <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, we capture the essence of your dream wedding and bring it to life.
         </p>
-        <p className="text-lg md:text-xl leading-relaxed opacity-90">
+        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl font-inter  opacity-90">
           We&apos;ll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
         </p>
       </div>
+
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl text-center text-black mb-12">Our Services</h1>
+        <h1 className="text-5xl text-center mb-12">Our Services</h1>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {serviceData.map((service, index) => (
             <ServiceCard 
@@ -181,8 +182,8 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto my-16">
-        <h1 className="text-5xl text-black text-center mb-12">Our Process</h1>
+      <div className="max-w-6xl mx-auto my-20">
+        <h1 className="text-5xl text-center mb-12">Our Process</h1>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {processData.map((service, index) => (
             <ServiceCard 

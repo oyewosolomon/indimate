@@ -30,7 +30,7 @@ const Gallery = () => {
       <div className='max-w-7xl bg-white text-black mx-auto px-4 py-8'>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <h1 className="text-6xl">Our private dinning space</h1>
+            <h1 className="text-5xl md:text-6xl">Our private dinning space</h1>
             <h3 className="text-2xl">Exciting News for Wedding Clients!</h3>
             <p className="text-gray-700 text-2xl">
               We&apos;re thrilled to announce a special offer for our private dining space! When you book us to plan your wedding, you can now enjoy exclusive discounts on our intimate venue for all your pre-wedding celebrations, such as bridal showers, engagement parties, and pre-wedding photoshoots.
