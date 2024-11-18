@@ -85,11 +85,12 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/Group_7685.png" 
           alt="Wedding couple" 
-          className="rounded-lg hidden sm:block"
+          className="rounded-lg "
           width={100}
           height={160}
           layout="responsive"
         />
+        <div className="hidden">
         <ParallaxImage 
           src="/assets/images/gallery-1.png" 
           alt="Wedding couple" 
@@ -194,6 +195,7 @@ const Gallery = () => {
           height={160}
           layout="responsive"
         />
+        </div>
       </motion.div>
 
       {/* Private Dining Section */}
@@ -207,6 +209,8 @@ const Gallery = () => {
             <ScrollReveal>
               <h3 className="text-2xl">Exciting News for Wedding Clients!</h3>
             </ScrollReveal>
+
+            <Image src="/assets/images/dinning.jpg" className='w-full block md:hidden' width={450} height={300}/>
             
             <ScrollReveal>
               <p className="text-gray-700 text-2xl">
