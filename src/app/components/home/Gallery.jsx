@@ -93,7 +93,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-1.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -101,7 +101,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-2.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -109,7 +109,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-3.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -117,7 +117,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-4.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -125,7 +125,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-5.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -133,7 +133,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-6.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -141,7 +141,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-7.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -149,7 +149,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-8.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -157,7 +157,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/gallery-9.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -165,7 +165,7 @@ const Gallery = () => {
         <ParallaxImage 
           src="/assets/images/full-planning.jpg" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -173,7 +173,7 @@ const Gallery = () => {
          <ParallaxImage 
           src="/assets/images/gallery-11.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -181,7 +181,7 @@ const Gallery = () => {
          <ParallaxImage 
           src="/assets/images/gallery-12.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
@@ -189,7 +189,7 @@ const Gallery = () => {
          <ParallaxImage 
           src="/assets/images/gallery-13.png" 
           alt="Wedding couple" 
-          className="rounded-lg block md:hidden"
+          className="block md:hidden"
           width={100}
           height={160}
           layout="responsive"
