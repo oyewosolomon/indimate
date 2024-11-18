@@ -23,7 +23,8 @@ const AnimateOnScroll = ({ children }) => {
   );
 };
 
-const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
+
+const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
   const [isContentVisible, setContentVisible] = useState(false);
 
   const handleToggleContent = () => {
@@ -38,7 +39,7 @@ const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
   return (
     <AnimateOnScroll>
       <div 
-        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-xl md:rounded-xl overflow-hidden group cursor-pointer"
+        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-xl md:rounded-xl overflow-y-auto group cursor-pointer"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -46,23 +47,38 @@ const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
         }}
         onClick={handleToggleContent}
       >
-        <div className={`absolute inset-0 transition-all duration-300 ${
+        <div className={`inset-0 transition-all duration-300 ${
           isContentVisible ? "md:bg-white" : "bg-black/40 group-hover:bg-black/50"
         }`}>
           {isContentVisible ? (
-            <div className="hidden md:flex absolute inset-0 flex-col items-center justify-start text-gray-900 p-2 md:p-6">
-              
-              <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
-              <div className="text-md sm:text-md md:text-sm lg:text-md overflow-y-auto md:overflow-y-hidden text-left space-y-2 px-3 items-start justify-start">
-                {content.map((item, index) => {
-                  if (item.type === "p") {
-                    return <p key={index}>{item.text}</p>;
-                  }
-                  if (item.type === "strong") {
-                    return <strong key={index}>{item.text}</strong>;
-                  }
-                  return null;
-                })} 
+            <div className="hidden md:block h-full overflow-y-auto">
+              <div className="flex flex-col items-center p-2 md:p-6">
+                <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
+                
+                <div className="text-md sm:text-md md:text-sm lg:text-md text-left space-y-2 px-3 text-gray-900 mb-6">
+                  {content.map((item, index) => {
+                    if (item.type === "p") {
+                      return <p key={index}>{item.text}</p>;
+                    }
+                    if (item.type === "strong") {
+                      return <strong key={index}>{item.text}</strong>;
+                    }
+                    return null;
+                  })}
+                </div>
+                
+                {featureImage && (
+                  <div className="w-full">
+                    <Image 
+                      src={featureImage} 
+                      alt={title}
+                      width={1200}
+                      height={800}
+                      className="w-full h-auto"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ) : (
@@ -96,18 +112,9 @@ const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
             
           >
             <div className="h-full flex flex-col justify-start space-y-4 text-left">
-              {featureImage && (<Image 
-                src={featureImage} 
-                alt={title}
-                width={1200}  // Set an appropriate max width
-                height={800}  // Set an appropriate height
-                className="w-full" 
-                style={{ objectFit: 'contain' }}
-              />)}
+             
               
               <div className="p-6">
-
-             
               {content.map((item, index) => {
                 if (item.type === "p") {
                   return <p key={index} className="text-base">{item.text}</p>;
@@ -118,6 +125,14 @@ const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
                 return null;
               })}
                </div>
+               {featureImage && (<Image 
+                src={featureImage} 
+                alt={title}
+                width={1200}  // Set an appropriate max width
+                height={800}  // Set an appropriate height
+                className="w-full" 
+                style={{ objectFit: 'contain' }}
+              />)}
             </div> 
            
           </div>
@@ -173,6 +188,7 @@ const Services = () => {
     {
       title: "Vendor Selection/ Coordination",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/vendor-selection.jpg",
       content: [
         { type: "p", text: "Once potential vendors are identified, we initiate contact to discuss packages, pricing, and availability. Request detailed proposals that outline services, ensuring transparency in costs." },
        
@@ -182,6 +198,7 @@ const Services = () => {
     {
       title: "Timeline/Event management",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/event-management.jpg",
       content: [
         { type: "p", text: "Our wedding event management skills are centered on meticulous planning and attention to detail, ensuring every aspect of the event is flawlessly executed." },
       
