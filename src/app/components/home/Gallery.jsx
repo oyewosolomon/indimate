@@ -65,7 +65,7 @@ const Gallery = () => {
   const headerY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
 
   return (
-    <div ref={containerRef} className="w-full z-20 py-16 bg-white text-black">
+    <div ref={containerRef} id='portfolio' className="w-full z-20 py-16 bg-white text-black">
       {/* Header Section with Fade Effect */}
       <motion.h1 
         className="text-7xl text-center mb-12"
