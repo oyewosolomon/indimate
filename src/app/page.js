@@ -12,8 +12,7 @@ import Contacts from "./components/home/Contacts";
 export default function Home() {
   return (
     <div>
-      <Hero />
-      
+      <Hero />      
       <Services/>
       <Gallery/>
       <Venue/>

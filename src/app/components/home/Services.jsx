@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 // Animate components when they come into view
 const AnimateOnScroll = ({ children }) => {
@@ -22,7 +23,7 @@ const AnimateOnScroll = ({ children }) => {
   );
 };
 
-const ServiceCard = ({ title, backgroundImage, content }) => {
+const ServiceCard = ({ title, backgroundImage,featureImage, content }) => {
   const [isContentVisible, setContentVisible] = useState(false);
 
   const handleToggleContent = () => {
@@ -50,7 +51,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
         }`}>
           {isContentVisible ? (
             <div className="hidden md:flex absolute inset-0 flex-col items-center justify-start text-gray-900 p-2 md:p-6">
-              <div className="text-md sm:text-md md:text-md lg:text-md overflow-y-auto md:overflow-y-hidden text-left space-y-2 px-3 items-start justify-start">
+              
+              <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
+              <div className="text-md sm:text-md md:text-sm lg:text-md overflow-y-auto md:overflow-y-hidden text-left space-y-2 px-3 items-start justify-start">
                 {content.map((item, index) => {
                   if (item.type === "p") {
                     return <p key={index}>{item.text}</p>;
@@ -89,14 +92,22 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
           </div>
           <div 
            onClick={handleToggleContent}
-            className="flex-1 p-6 text-gray-900"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${backgroundImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            className="flex-1 text-gray-900 overflow-y-auto"
+            
           >
             <div className="h-full flex flex-col justify-start space-y-4 text-left">
+              {featureImage && (<Image 
+                src={featureImage} 
+                alt={title}
+                width={1200}  // Set an appropriate max width
+                height={800}  // Set an appropriate height
+                className="w-full" 
+                style={{ objectFit: 'contain' }}
+              />)}
+              
+              <div className="p-6">
+
+             
               {content.map((item, index) => {
                 if (item.type === "p") {
                   return <p key={index} className="text-base">{item.text}</p>;
@@ -106,7 +117,9 @@ const ServiceCard = ({ title, backgroundImage, content }) => {
                 }
                 return null;
               })}
-            </div>
+               </div>
+            </div> 
+           
           </div>
         </motion.div>
       )}
@@ -119,6 +132,7 @@ const Services = () => {
     {
       title: "Full Planning",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/full-planning.jpg",
       content: [
         { type: "p", text: "We are excited to help you plan a wedding that beautifully combines the magic of a fairytale with the excitement of an unconventional celebration." },
         { type: "p", text: `To start, we'll craft a mood board tailored to suit your personal style, imagine pastel colours, bold accents, twinkling lights, and quirky elements that capture your vision. For the venue, we can explore enchanting options like botanical gardens, art galleries, or eclectic spaces that can be transformed into a whimsical setting.` },
@@ -129,6 +143,7 @@ const Services = () => {
     {
       title: "Full Decoration Service",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/full-decoration.jpg",
       content: [
         { type: "p", text: "We specialize in creating wedding environments that are calm, ethereal, and uniquely tailored to reflect each couple's vision." },
         { type: "p", text: "Our approach combines delicate aesthetics with a personalized touch, ensuring that every detail aligns seamlessly with your mood board. We believe that your wedding should evoke a sense of serenity and magic, transforming your chosen venue into a captivating space that resonates with your style and emotions." },
@@ -137,6 +152,7 @@ const Services = () => {
     {
       title: "Full Coordinating Services",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/full-coordination.jpg",
       content: [
         { type: "p", text: "We bring your wedding vision to life with our expert coordinating services. From personalized planning to day-of coordination, we handle every detail to ensure a seamless celebration." },
      ]
@@ -147,6 +163,7 @@ const Services = () => {
     {
       title: "Vision Development",
       backgroundImage: "/api/placeholder/400/320",
+      featureImage: "/assets/images/vision-development.jpg",
       content: [
         { type: "p", text: "Our process begins with a personalized consultation, where we take the time to understand your personalities, preferences, and aspirations." },
        
@@ -176,7 +193,7 @@ const Services = () => {
 
   return (
     <div id="aboutus"
-      className="min-h-screen z-20 relative text-white py-16 px-4 md:px-8 bg-cover bg-center font-gilroy"
+      className="min-h-screen z-20 relative text-white py-16 px-4 md:px-8 bg-cover bg-center"
       style={{
         backgroundImage: `url('/assets/images/hero_background.png')`,
       }}
@@ -203,7 +220,8 @@ const Services = () => {
           {serviceData.map((service, index) => (
             <ServiceCard 
               key={index}
-              title={service.title}
+              title={service.title} 
+              featureImage={service.featureImage} 
               backgroundImage={service.backgroundImage}
               content={service.content}
             />
@@ -220,6 +238,7 @@ const Services = () => {
             <ServiceCard 
               key={index}
               title={service.title}
+              featureImage={service.featureImage}
               backgroundImage={service.backgroundImage}
               content={service.content}
             />
