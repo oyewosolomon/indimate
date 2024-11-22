@@ -84,7 +84,7 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
           ) : (
             <div className="absolute inset-0 flex flex-col text-center place-items-center place-content-center items-center justify-center text-white p-3 md:p-6">
               <h3 className="text-sm md:text-xl font-semibold mb-2">{title}</h3>
-              <span className="text-[8px] md:text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
+              <span className="text-[11px] font-semibold md:text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
             </div>
           )}
         </div>
