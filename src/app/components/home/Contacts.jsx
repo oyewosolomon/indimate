@@ -44,7 +44,7 @@ const Contacts = () => {
             alt="Wedding Photographer"
             width={100}
             height={100}
-            className="object-contain"
+            className="object-contain rounded-xl"
           />
         </div>
 
