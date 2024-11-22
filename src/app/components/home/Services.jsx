@@ -221,10 +221,10 @@ const Services = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="max-w-6xl mx-auto text-center mb-20"
       >
-        <p className="leading-[2rem] md:leading-[3rem] text-2xl md:text-4xl font-inter mb-8">
+        <p className="leading-[2rem] md:leading-[3rem] text-2xl md:text-4xl mb-8">
           With words like <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, we capture the essence of your dream wedding and bring it to life.
         </p>
-        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl font-inter opacity-90">
+        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl opacity-90">
           We&apos;ll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
         </p>
       </motion.div>

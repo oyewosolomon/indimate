@@ -19,7 +19,7 @@ const inter = Inter({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${italianno.variable} ${inter.variable}`}>
-      <body className={inter.className}>
+      <body className={italianno.className}>
         {children}
       </body>
     </html>
