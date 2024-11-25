@@ -12,6 +12,7 @@
     font-family: var(--font-italianno);
     color: var(--foreground);
     background: var(--background);
+    font-size: 16px;
   }
 
   div,p, h1, h2,span{
