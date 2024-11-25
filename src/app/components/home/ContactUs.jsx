@@ -168,7 +168,7 @@ const ContactUs = () => {
 
       <motion.p 
         variants={fadeUpVariants}
-        className="text-gray-700 max-w-5xl mx-auto text-2xl leading-relaxed mb-8 text-center"
+        className="text-gray-700 max-w-5xl mx-auto text-3xl leading-relaxed mb-8 text-center"
       >
         I&apos;ve always been enchanted by destination weddings, but I have realised they can 
         feel out of reach unless you actually travel to the country. I wanted to break away 
@@ -182,14 +182,14 @@ const ContactUs = () => {
           <motion.button 
             variants={buttonVariants}
             whileHover="hover"
-            className="bg-[#0A341F] text-white px-6 py-2 rounded-3xl hover:bg-green-800 transition-colors"
+            className="bg-[#0A341F] text-white text-2xl px-6 py-2 rounded-3xl hover:bg-green-800 transition-colors"
           >
             Contact us
           </motion.button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md ">
           <DialogHeader>
-            <DialogTitle className="text-2xl mb-4">Get in Touch</DialogTitle>
+            <DialogTitle className="text-3xl mb-4">Get in Touch</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">

@@ -55,7 +55,7 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
               <div className="flex flex-col items-center p-2 md:p-6">
                 <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
                 
-                <div className="text-md sm:text-md md:text-sm lg:text-md text-left space-y-2 px-3 text-gray-900 mb-6">
+                <div className="text-lg sm:text-lg md:text-lg lg:text-lg text-left space-y-2 px-3 text-gray-900 mb-6">
                   {content.map((item, index) => {
                     if (item.type === "p") {
                       return <p key={index}>{item.text}</p>;
@@ -83,8 +83,8 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
             </div>
           ) : (
             <div className="absolute inset-0 flex flex-col text-center place-items-center place-content-center items-center justify-center text-white p-3 md:p-6">
-              <h3 className="text-sm md:text-xl font-semibold mb-2">{title}</h3>
-              <span className="text-[11px] font-semibold md:text-sm tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
+              <h3 className="text-lg md:text-3xl font-semibold mb-2">{title}</h3>
+              <span className="text-[11px] font-semibold md:text-md tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
             </div>
           )}
         </div>
@@ -98,7 +98,7 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
           className="fixed inset-0 bg-white rounded-lg m-3 z-50 md:hidden flex flex-col"
         >
           <div className="flex justify-between items-center p-4 border-b">
-            <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+            <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
             <button 
               onClick={handleToggleContent}
               className="text-gray-600 hover:text-gray-900 text-xl"
@@ -114,7 +114,7 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }) => {
             <div className="h-full flex flex-col justify-start space-y-4 text-left">
              
               
-              <div className="p-6">
+              <div className="p-6 text-lg">
               {content.map((item, index) => {
                 if (item.type === "p") {
                   return <p key={index} className="text-base">{item.text}</p>;
@@ -210,7 +210,7 @@ const Services = () => {
 
   return (
     <div id="aboutus"
-      className="min-h-screen z-20 relative text-white py-16 px-4 md:px-8 bg-cover bg-center"
+      className="min-h-screen z-20 relative text-white bg-black py-16 px-4 md:px-8 bg-cover bg-center"
       style={{
         backgroundImage: `url('/assets/images/hero_background.png')`,
       }}
@@ -221,10 +221,12 @@ const Services = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="max-w-6xl mx-auto text-center mb-20"
       >
-        <p className="leading-[2rem] md:leading-[3rem] text-2xl md:text-4xl mb-8">
-          With words like <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, we capture the essence of your dream wedding and bring it to life.
+        <p className="leading-[2rem] md:leading-[3rem] text-3xl md:text-4xl mb-8">
+          With words like 
+          <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, 
+          we capture the essence of your dream wedding and bring it to life.
         </p>
-        <p className="leading-[2rem] md:leading-[3rem] text-lg md:text-3xl opacity-90">
+        <p className="leading-[2rem] md:leading-[3rem] text-3xl md:text-4xl opacity-90">
           We&apos;ll take you on a journey to a destination wedding no matter where you are and pay attention to every detail, culture and aesthetic to elevate your wedding experience to new heights. Trust us to create a one-of-a-kind mood board that will make your intimate wedding unforgettable.
         </p>
       </motion.div>
