@@ -58,7 +58,7 @@ const Contacts = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="border border-white rounded-md p-10 text-center text-white backdrop-blur-sm"
           >
-            <h1 className="text-6xl mb-3">Contact us</h1>
+            <h1 className="text-5xl mb-3">Contact us</h1>
             <p className="mb-1">Glamorousspacesbyfave@gmail.com</p>
             <p>+234 8166734100</p>
           </motion.div>
@@ -72,7 +72,7 @@ const Contacts = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="border border-white rounded-md p-10 text-center text-white backdrop-blur-sm"
           >
-            <h1 className="text-6xl mb-3">Working hours</h1>
+            <h1 className="text-5xl mb-3">Working hours</h1>
             <p>Monday - Friday: 8:00am - 6pm</p>
             <p>Saturday - Sunday: 1:00pm - 6pm</p>
           </motion.div>

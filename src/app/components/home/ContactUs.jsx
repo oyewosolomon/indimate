@@ -144,7 +144,7 @@ const ContactUs = () => {
     >
       <motion.h1 
         variants={fadeUpVariants}
-        className="text-5xl md:text-7xl mb-8"
+        className="text-3xl md:text-7xl mb-8"
       >
         Intimate Weddings By Fave
       </motion.h1>
@@ -168,7 +168,7 @@ const ContactUs = () => {
 
       <motion.p 
         variants={fadeUpVariants}
-        className="text-gray-700 max-w-5xl mx-auto text-3xl leading-relaxed mb-8 text-center"
+        className="text-gray-700 max-w-5xl mx-auto text-base leading-relaxed mb-8 text-center"
       >
         I&apos;ve always been enchanted by destination weddings, but I have realised they can 
         feel out of reach unless you actually travel to the country. I wanted to break away 

@@ -1,7 +1,4 @@
-import Image from "next/image";
 import Hero from "./components/home/Hero";
-import MidNav from "./components/home/MidNav";
-import Welcome from "./components/home/Welcome";
 import Services from "./components/home/Services";
 import Gallery from "./components/home/Gallery";
 import Venue from "./components/home/Venue";

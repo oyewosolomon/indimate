@@ -33,8 +33,8 @@ const Rsvp = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 py-12">
       {/* Header Section */}
-      <div className="text-center mb-14 mt-16 italic">
-        <h1 className="text-6xl">Join us in celebrating forever</h1>
+      <div className="text-center mb-14 mt-16">
+        <h1 className="text-5xl">Join us in celebrating forever</h1>
       </div>
 
       {/* Main Image and Content */}

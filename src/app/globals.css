@@ -4,18 +4,18 @@
 
 @layer base {
   h1 {
-    font-family: var(--font-italianno);
+    font-family: var(--font-playfair);
   }
   
   body {
     /* font-family: var(--font-inter); */
-    font-family: var(--font-italianno);
+    font-family: var(--font-lato);
     color: var(--foreground);
     background: var(--background);
   }
 
   div,p, h1, h2,span{
-    font-family: var(--font-italianno);
+    font-family: var(--font-playfair);
   }
   :root {
     --background: 0 0% 100%;

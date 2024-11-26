@@ -90,7 +90,7 @@ const Welcome = () => {
         </ScrollAnimatedSection>
 
         <ScrollAnimatedSection>
-          <p className="text-2xl  text-gray-600">
+          <p className="text-xl  text-gray-600">
             We are so happy to have you here, and you&apos;ve come to the right place.
           </p>
         </ScrollAnimatedSection>

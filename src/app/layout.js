@@ -1,6 +1,6 @@
 // layout.js
-import { Italianno } from 'next/font/google';
-import { Inter } from 'next/font/google';
+import { Italianno, Playfair_Display, Lato} from 'next/font/google';
+
 import "./globals.css";
 
 const italianno = Italianno({
@@ -10,16 +10,23 @@ const italianno = Italianno({
   variable: '--font-italianno',
 });
 
-const inter = Inter({
-  subsets: ['latin'],
+
+const playfair = Playfair_Display({
+  subsets: ['latin'], 
+  weight: ['400', '700'],
   display: 'swap',
-  variable: '--font-inter',
+});
+
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${italianno.variable} ${inter.variable}`}>
-      <body className={italianno.className}>
+    <html lang="en" className={`${italianno.variable} ${playfair.variable} ${lato.variable}`}>
+      <body className={playfair.className}>
         {children}
       </body>
     </html>

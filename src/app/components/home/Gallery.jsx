@@ -68,7 +68,7 @@ const Gallery = () => {
     <div ref={containerRef} id='portfolio' className="w-full z-20 py-16 bg-white text-black">
       {/* Header Section with Fade Effect */}
       <motion.h1 
-        className="text-7xl text-center mb-12"
+        className="text-5xl text-center mb-12"
         style={{ opacity: headerOpacity, y: headerY }}
       >
         Cozy gatherings, unforgettable memories.
@@ -203,23 +203,23 @@ const Gallery = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-7xl">Our private dining space</h1>
+              <h1 className="text-4xl md:text-7xl">Our private dining space</h1>
             </ScrollReveal>
             
             <ScrollReveal>
-              <h3 className="text-3xl">Exciting News for Wedding Clients!</h3>
+              <h3 className="text-xl">Exciting News for Wedding Clients!</h3>
             </ScrollReveal>
 
             <Image src="/assets/images/dinning.jpg" className='w-full block md:hidden' width={450} height={300}/>
             
             <ScrollReveal>
-              <p className="text-gray-700 text-3xl font-semibold">
+              <p className="text-gray-700 text-base ">
                 We&apos;re thrilled to announce a special offer for our private dining space! When you book us to plan your wedding, you can now enjoy exclusive discounts on our intimate venue for all your pre-wedding celebrations, such as bridal showers, engagement parties, and pre-wedding photoshoots.
               </p>
             </ScrollReveal>
             
             <ScrollReveal>
-              <p className="text-gray-700 text-3xl font-semibold">
+              <p className="text-gray-700 text-base">
                 Transform your special moments into unforgettable experiences in our beautifully designed space, perfect for small gatherings. This limited-time offer makes it easier than ever to celebrate your journey to &quot;I do.&quot; Contact us to learn more and secure your date!
               </p>
             </ScrollReveal>
