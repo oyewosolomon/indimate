@@ -17,7 +17,7 @@ const Hero = () => {
         />
         {/* Centered Text */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white/80 tracking-widest text-5xl md:text-6xl font-bold">Intimate</h1>
+          <h1 className="text-white/80 tracking-widest text-5xl md:text-6xl font-bold"></h1>
         </div>
       </div>
 
