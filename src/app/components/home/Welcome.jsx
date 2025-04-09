@@ -51,19 +51,19 @@ const InfiniteHorizontalRow = ({ images, direction = 'right', speed = 20 }) => {
 const Welcome = () => {
   const topRowImages = [
     { src: "/assets/images/image_3.png", alt: "Beachside wedding arch with flowers" },
-    { src: "/assets/images/g-5.JPG", alt: "Beachside wedding arch with flowers" },
-    { src: "/assets/images/g-6.JPG", alt: "Beachside wedding arch with flowers" },
-    { src: "/assets/images/g-7.JPG", alt: "Beachside wedding arch with flowers" },
+    { src: "/assets/images/g-5-min.JPG", alt: "Beachside wedding arch with flowers" },
+    { src: "/assets/images/g-6-min.JPG", alt: "Beachside wedding arch with flowers" },
+    { src: "/assets/images/g-7-min.JPG", alt: "Beachside wedding arch with flowers" },
     { src: "/assets/images/image_1.png", alt: "Bride against white backdrop" },
     { src: "/assets/images/image_4.png", alt: "Couple under floral arch" },
   ];
 
   const bottomRowImages = [
-    { src: "/assets/images/g-1.JPG", alt: "Couple under floral arch" },
-    { src: "/assets/images/g-2.JPG", alt: "Beachside wedding arch with flowers" },
-    { src: "/assets/images/g-3.JPG", alt: "Bride against white backdrop" },
-    { src: "/assets/images/g-4.JPG", alt: "Bride against white backdrop" },
-    { src: "/assets/images/g-8.JPG", alt: "Bride against white backdrop" },
+    { src: "/assets/images/g-1-min.JPG", alt: "Couple under floral arch" },
+    { src: "/assets/images/g-2-min.JPG", alt: "Beachside wedding arch with flowers" },
+    { src: "/assets/images/g-3-min.JPG", alt: "Bride against white backdrop" },
+    { src: "/assets/images/g-4-min.JPG", alt: "Bride against white backdrop" },
+    { src: "/assets/images/g-8-min.JPG", alt: "Bride against white backdrop" },
   ];
 
   return (

@@ -248,7 +248,7 @@ const Gallery = () => {
        transition={{ duration: 0.8 }}
        className='w-full mx-auto'>
         <Image 
-          src="/assets/images/Artboard.png" 
+          src="/assets/images/Artboard.jpeg" 
           alt="Venue Background" 
           width={1200} // native width
           height={600} // native height
