@@ -6,6 +6,7 @@ export default function Venue() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
+      
       <div className="absolute inset-0">
         <Image 
           src="/assets/images/image_5.png" 

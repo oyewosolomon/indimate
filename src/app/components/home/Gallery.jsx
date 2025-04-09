@@ -65,7 +65,7 @@ const Gallery = () => {
   const headerY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
 
   return (
-    <div ref={containerRef} id='portfolio' className="w-full z-20 py-16 bg-white text-black">
+    <div ref={containerRef} id='portfolio' className="w-full z-20 bg-white text-black">
       {/* Header Section with Fade Effect */}
       <motion.h1 
         className="text-5xl text-center mb-12"
@@ -240,6 +240,21 @@ const Gallery = () => {
           />
         </div>
       </div>
+
+      <motion.div 
+       initial={{ opacity: 0, y: 100 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.8 }}
+       className='w-full mx-auto'>
+        <Image 
+          src="/assets/images/Artboard.png" 
+          alt="Venue Background" 
+          width={1200} // native width
+          height={600} // native height
+          layout="responsive"
+        />
+      </motion.div>
     </div>
   );
 };
