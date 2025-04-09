@@ -223,7 +223,7 @@ const Services = () => {
       >
         <p className="leading-[2rem] md:leading-[3rem] text-3xl md:text-4xl mb-8">
           With words like 
-          <span className="font-normal tracking-widest">RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, 
+          <span className="font-normal tracking-widest"> RARE, ETHEREAL, DELICATE AND EFFORTLESS</span>, 
           we capture the essence of your dream wedding and bring it to life.
         </p>
         <p className="leading-[2rem] md:leading-[3rem] text-xl md:text-2xl opacity-90">

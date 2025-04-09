@@ -88,7 +88,7 @@ const Gallery = () => {
           className="rounded-lg "
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <div className="hidden">
         <ParallaxImage 
@@ -97,7 +97,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-2.png" 
@@ -105,7 +105,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-3.png" 
@@ -113,7 +113,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-4.png" 
@@ -121,7 +121,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-5.png" 
@@ -129,7 +129,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-6.png" 
@@ -137,7 +137,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-7.png" 
@@ -145,7 +145,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-8.png" 
@@ -153,7 +153,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/gallery-9.png" 
@@ -161,7 +161,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
           src="/assets/images/full-planning.jpg" 
@@ -169,7 +169,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
           src="/assets/images/gallery-11.png" 
@@ -177,7 +177,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
           src="/assets/images/gallery-12.png" 
@@ -185,7 +185,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
           src="/assets/images/gallery-13.png" 
@@ -193,7 +193,7 @@ const Gallery = () => {
           className="block md:hidden"
           width={100}
           height={160}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         </div>
       </motion.div>
@@ -210,7 +210,13 @@ const Gallery = () => {
               <h3 className="text-xl">Exciting News for Wedding Clients!</h3>
             </ScrollReveal>
 
-            <Image src="/assets/images/dinning.jpg" className='w-full block md:hidden' width={450} height={300}/>
+            <Image 
+              src="/assets/images/dinning.jpg" 
+              className='w-full block md:hidden' 
+              width={450} 
+              height={300} 
+              alt='Dining'
+            />
             
             <ScrollReveal>
               <p className="text-gray-700 text-base ">

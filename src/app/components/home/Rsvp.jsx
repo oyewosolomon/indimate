@@ -1,8 +1,7 @@
 "use client"
 
-
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 const Rsvp = () => {
@@ -14,21 +13,21 @@ const Rsvp = () => {
   // State to keep track of the current slide index
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Function to handle next slide
-  const nextSlide = () => {
+  // Function to handle next slide (memoized with useCallback)
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
+  }, [images.length]);
 
-  // Function to handle previous slide
-  const prevSlide = () => {
+  // Function to handle previous slide (memoized with useCallback)
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   // Auto-slide effect
   useEffect(() => {
     const autoSlide = setInterval(nextSlide, 5000); // Change slide every 5 seconds
     return () => clearInterval(autoSlide); // Clear interval on unmount
-  }, []);
+  }, [nextSlide]); // Only nextSlide needed here
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 py-12">
@@ -48,7 +47,6 @@ const Rsvp = () => {
             width={619.24}
             height={774}
           />
-
         </div>
 
         {/* Navigation Dots and Arrows */}
