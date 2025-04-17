@@ -50,14 +50,14 @@ const Rsvp = () => {
           />
 
           {/* Couple names overlay */}
-          <div className="absolute bottom-20 left-0 right-0 text-center ">
+          {/* <div className="absolute bottom-20 left-0 right-0 text-center ">
             <div className="text-white text-3xl font-script">
               Precious + Michael
             </div>
             <div className="text-white text-sm font-light tracking-widest mt-2">
               ARE GETTING MARRIED
             </div>
-          </div>
+          </div> */}
 
           {/* Controls overlay positioned on the image */}
           <div className="absolute bottom-0 left-0 right-0 p-6">
