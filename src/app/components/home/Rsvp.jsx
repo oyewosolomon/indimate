@@ -7,7 +7,7 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 const Rsvp = () => {
   // Define the list of images for the slider
   const images = [
-    '/assets/images/image_7.jpg',
+    '/assets/images/image_7-mini.jpeg',
     // Add more images as needed
   ];
 
