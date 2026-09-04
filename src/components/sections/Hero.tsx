@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="relative w-full z-20">
       {/* Hero Section */}
       <div className="h-screen w-full sticky top-0 z-20">
-        {/* Background Image */}
+        {/* Background Image home_bg_1.jpeg*/}
         <div
           className="absolute inset-0 bg-[url('/assets/images/image_2.jpg')] bg-cover bg-center bg-no-repeat"
           style={{
