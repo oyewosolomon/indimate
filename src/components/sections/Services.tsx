@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, type ReactNode } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
@@ -24,117 +24,122 @@ const AnimateOnScroll = ({ children }: { children: ReactNode }) => {
 };
 
 
-const ServiceCard = ({ title, backgroundImage, featureImage, content }: Service) => {
-  const [isContentVisible, setContentVisible] = useState(false);
+const MOBILE_MEDIA_QUERY = '(max-width: 767px)';
 
-  const handleToggleContent = () => {
-    setContentVisible(!isContentVisible);
-    if (!isContentVisible) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
+const ServiceCard = ({ title, backgroundImage, featureImage, content }: Service) => {
+  // Desktop reveals content on hover (pure CSS, no state). This is only for
+  // the mobile full-screen modal, which is the one case that should lock
+  // background scroll.
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    if (!window.matchMedia(MOBILE_MEDIA_QUERY).matches) return;
+
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileOpen]);
+
+  const openOnMobile = () => {
+    if (window.matchMedia(MOBILE_MEDIA_QUERY).matches) {
+      setIsMobileOpen(true);
     }
   };
+  const closeMobile = () => setIsMobileOpen(false);
+
+  const renderedContent = content.map((item, index) => {
+    if (item.type === "p") {
+      return <p key={index}>{item.text}</p>;
+    }
+    if (item.type === "strong") {
+      return <strong key={index}>{item.text}</strong>;
+    }
+    return null;
+  });
 
   return (
     <AnimateOnScroll>
       <div
-        className="relative justify-start h-[12rem] md:h-[30rem] border-[1px] border-white rounded-xl md:rounded-xl overflow-y-auto group cursor-pointer"
+        className="group relative h-[12rem] md:h-[30rem] border-[1px] border-white rounded-xl overflow-hidden cursor-pointer"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        onClick={handleToggleContent}
+        onClick={openOnMobile}
       >
-        <div className={`inset-0 transition-all duration-300 ${
-          isContentVisible ? "md:bg-white" : "bg-black/40 group-hover:bg-black/50"
-        }`}>
-          {isContentVisible ? (
-            <div className="hidden md:block h-full overflow-y-auto">
-              <div className="flex flex-col items-center p-2 md:p-6">
-                <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
+        {/* Closed state: always visible on mobile, fades out on hover on desktop */}
+        <div className="absolute inset-0 flex flex-col text-center items-center justify-center text-white p-3 md:p-6 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50 md:group-hover:opacity-0">
+          <h3 className="text-md md:text-3xl font-semibold mb-2">{title}</h3>
+          <span className="text-[11px] font-semibold tracking-wider opacity-80 text-[#D4A300] md:hidden">TAP TO READ</span>
+          <span className="hidden md:inline text-md font-semibold tracking-wider opacity-80 text-[#D4A300]">HOVER TO READ</span>
+        </div>
 
-                <div className="text-sm md:text-sm text-left space-y-2 px-3 text-gray-900 mb-6">
-                  {content.map((item, index) => {
-                    if (item.type === "p") {
-                      return <p key={index}>{item.text}</p>;
-                    }
-                    if (item.type === "strong") {
-                      return <strong key={index}>{item.text}</strong>;
-                    }
-                    return null;
-                  })}
-                </div>
-
-                {featureImage && (
-                  <div className="w-full">
-                    <Image
-                      src={featureImage}
-                      alt={title}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                )}
+        {/* Desktop-only: revealed on hover, dismissed simply by moving the cursor away */}
+        <div className="absolute inset-0 hidden md:block overflow-y-auto bg-white opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto">
+          <div className="flex flex-col items-center p-6">
+            <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
+            <div className="text-sm text-left space-y-2 px-3 text-gray-900 mb-6">
+              {renderedContent}
+            </div>
+            {featureImage && (
+              <div className="w-full">
+                <Image
+                  src={featureImage}
+                  alt={title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-            </div>
-          ) : (
-            <div className="absolute inset-0 flex flex-col text-center place-items-center place-content-center items-center justify-center text-white p-3 md:p-6">
-              <h3 className="text-md md:text-3xl font-semibold mb-2">{title}</h3>
-              <span className="text-[11px] md:text-md font-semibold tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
 
-      {isContentVisible && (
+      {/* Mobile-only full-screen modal, opened by tapping the card. A separate
+          backdrop layer (rather than margin-on-the-card) makes "tap outside
+          to close" reach an element that's actually there to receive it. */}
+      {isMobileOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-white rounded-lg m-3 z-50 md:hidden flex flex-col"
+          className="fixed inset-0 bg-black/50 z-50 md:hidden"
+          onClick={closeMobile}
         >
-          <div className="flex justify-between items-center p-4 border-b">
-            <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-            <button
-              onClick={handleToggleContent}
-              className="text-gray-600 hover:text-gray-900 text-xl"
-            >
-              ×
-            </button>
-          </div>
           <div
-           onClick={handleToggleContent}
-            className="flex-1 text-gray-900 overflow-y-auto"
-
+            className="absolute inset-3 bg-white rounded-lg flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="h-full flex flex-col justify-start space-y-4 text-left">
-
-
-              <div className="p-6 text-base">
-              {content.map((item, index) => {
-                if (item.type === "p") {
-                  return <p key={index} >{item.text}</p>;
-                }
-                if (item.type === "strong") {
-                  return <strong key={index} >{item.text}</strong>;
-                }
-                return null;
-              })}
-               </div>
-               {featureImage && (<Image
-                src={featureImage}
-                alt={title}
-                width={1200}  // Set an appropriate max width
-                height={800}  // Set an appropriate height
-                className="w-full"
-                style={{ objectFit: 'contain' }}
-              />)}
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+              <button
+                onClick={closeMobile}
+                className="text-gray-600 hover:text-gray-900 text-xl"
+                aria-label="Close"
+              >
+                ×
+              </button>
             </div>
-
+            <div className="flex-1 text-gray-900 overflow-y-auto">
+              <div className="h-full flex flex-col justify-start space-y-4 text-left">
+                <div className="p-6 text-base">{renderedContent}</div>
+                {featureImage && (
+                  <Image
+                    src={featureImage}
+                    alt={title}
+                    width={1200}
+                    height={800}
+                    className="w-full"
+                    style={{ objectFit: 'contain' }}
+                  />
+                )}
+              </div>
+            </div>
           </div>
         </motion.div>
       )}
