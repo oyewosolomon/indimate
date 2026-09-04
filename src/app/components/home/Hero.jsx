@@ -16,8 +16,10 @@ const Hero = () => {
           }}
         />
         {/* Centered Text */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white/80 tracking-widest text-5xl md:text-6xl font-bold"></h1>
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <h1 className="text-white/80 tracking-widest text-3xl md:text-6xl font-bold text-center">
+            Intimate &amp; Destination Wedding Planner in Lagos, Nigeria
+          </h1>
         </div>
       </div>
 

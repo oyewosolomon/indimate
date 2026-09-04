@@ -142,12 +142,12 @@ const ContactUs = () => {
       animate={isInView ? "visible" : "hidden"}
       className="max-w-8xl bg-white text-black mx-auto px-6 py-16 text-center"
     >
-      <motion.h1 
+      <motion.h2
         variants={fadeUpVariants}
         className="text-3xl md:text-7xl mb-8"
       >
         Intimate Weddings By Fave
-      </motion.h1>
+      </motion.h2>
       
       <motion.div 
         ref={imageRef}  // Attach ref to monitor view status

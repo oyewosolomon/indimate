@@ -35,7 +35,7 @@ const Rsvp = () => {
       <div className="max-w-2xl w-full bg-white shadow-xl">
         {/* Newspaper-style header */}
         <div className="border-b-2 border-gray-800 pt-6 pb-2 px-8">
-          <h1 className="text-4xl font-black text-center" style={{ fontFamily: 'Old English Text MT, serif' }}>The Wedding Post</h1>
+          <h2 className="text-4xl font-black text-center" style={{ fontFamily: 'Old English Text MT, serif' }}>The Wedding Post</h2>
           <h2 className="text-xl font-bold text-center mt-1">THE BEST DAY EVER</h2>
         </div>
 

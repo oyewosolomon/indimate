@@ -22,20 +22,20 @@ export default function Venue() {
         className="relative flex flex-col items-center justify-center h-full text-center text-white "
       >
         
-        <h1 
+        <h2
           className="text-6xl md:text-6xl mb-16"
-        >Venue Capacity</h1>
+        >Venue Capacity</h2>
 
         <div className="flex items-center space-x-12 md:space-x-28">
           <div>
-            <h1 className="text-4xl md:text-6xl mb-8 font-light">50 people</h1>
+            <h3 className="text-4xl md:text-6xl mb-8 font-light">50 people</h3>
             <p className="text-md md:text-2lg">Theatre Settings</p>
-          </div> 
+          </div>
 
           <div className="w-[4px] h-40 bg-white" />
 
           <div>
-            <h1 className="text-4xl md:text-6xl mb-8 font-light">20-40 Guests</h1>
+            <h3 className="text-4xl md:text-6xl mb-8 font-light">20-40 Guests</h3>
             <p className="text-md md:text-2lg">Table setting style</p>
           </div>
         </div>

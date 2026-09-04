@@ -67,12 +67,12 @@ const Gallery = () => {
   return (
     <div ref={containerRef} id='portfolio' className="w-full z-20 bg-white text-black">
       {/* Header Section with Fade Effect */}
-      <motion.h1 
+      <motion.h2
         className="text-5xl text-center mb-12"
         style={{ opacity: headerOpacity, y: headerY }}
       >
         Cozy gatherings, unforgettable memories.
-      </motion.h1>
+      </motion.h2>
       
       {/* Photo Grid with Parallax */}
       <motion.div 
@@ -203,7 +203,7 @@ const Gallery = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <ScrollReveal>
-              <h1 className="text-4xl md:text-7xl">Our private dining space</h1>
+              <h2 className="text-4xl md:text-7xl">Our private dining space</h2>
             </ScrollReveal>
             
             <ScrollReveal>

@@ -70,11 +70,11 @@ const Welcome = () => {
     <div className="max-w-7xl mx-auto px-4 py-16 bg-white text-gray-800 overflow-hidden">
       {/* Hero Text Section */}
       <div className="text-center mb-16 space-y-6">
-        <h1 className="text-4xl leading-10 md:text-7xl font-medium text-gray-800">
+        <h2 className="text-4xl leading-10 md:text-7xl font-medium text-gray-800">
           Dreamy, Ethereal, Curated for the
           <br />
           Unconventional Couple
-        </h1>
+        </h2>
         <p className="text-xl text-gray-600">
           We are so happy to have you here, and you&apos;ve come to the right place.
         </p>

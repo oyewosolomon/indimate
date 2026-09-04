@@ -233,7 +233,7 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
-          <h1 className="text-5xl text-center mb-12">Our Services</h1>
+          <h2 className="text-5xl text-center mb-12">Our Services</h2>
         </AnimateOnScroll>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {serviceData.map((service, index) => (
@@ -250,7 +250,7 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto my-20">
         <AnimateOnScroll>
-          <h1 className="text-5xl text-center mb-12">Our Process</h1>
+          <h2 className="text-5xl text-center mb-12">Our Process</h2>
         </AnimateOnScroll>
         <div className="grid grid-cols-3 gap-3 md:gap-6">
           {processData.map((service, index) => (
