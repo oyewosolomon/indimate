@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useRef, useState } from 'react';
+import { useRef, useState, type ChangeEvent, type FormEvent } from 'react';
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
@@ -38,7 +38,7 @@ const ContactUs = () => {
     amount: 0.5    // Trigger at 50% visibility
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -46,26 +46,34 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+    if (!formspreeId) {
+      toast({
+        title: "Contact form isn't configured yet",
+        description: "Set NEXT_PUBLIC_FORMSPREE_FORM_ID to enable message sending.",
+        variant: "destructive",
+        duration: 5000,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Send email using server API route
-      const response = await fetch('/api/send-email', {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
-          to: 'hello@indomite.com',
-          subject: `New Contact Form Submission from ${formData.name}`,
-          text: `
-            Name: ${formData.name}
-            Email: ${formData.email}
-            Phone: ${formData.phone}
-            Message: ${formData.message}
-          `
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
         }),
       });
 
@@ -102,7 +110,7 @@ const ContactUs = () => {
   };
 
   
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { 
       opacity: 0,
       y: 20
@@ -124,12 +132,12 @@ const ContactUs = () => {
   };
 
 
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1, transition: { duration: 1.5, ease: "easeOut" } },
     fadeOut: { opacity: 0, scale: 0.95, transition: { duration: 1.5, ease: "easeIn" } }

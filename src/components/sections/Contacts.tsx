@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 
 const Contacts = () => {
   // Create refs for each animated section
@@ -14,7 +14,7 @@ const Contacts = () => {
   const isHoursInView = useInView(hoursRef, { once: true });
 
   // Animation variants
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
@@ -25,7 +25,7 @@ const Contacts = () => {
       <div className="absolute inset-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/bg-img.png"
+            src="/assets/images/bg-img.jpg"
             alt="Background"
             fill
             className="object-cover"

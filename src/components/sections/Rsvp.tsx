@@ -1,8 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import React, { useState, useCallback, useEffect } from 'react';
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { useState, useCallback, useEffect } from 'react';
 
 const Rsvp = () => {
   // Define the list of images for the slider

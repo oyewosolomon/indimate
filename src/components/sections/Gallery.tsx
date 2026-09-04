@@ -1,10 +1,15 @@
 "use client"
 
-import React, { useRef } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 
-const ScrollReveal = ({ children, className }) => {
+interface ScrollRevealProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const ScrollReveal = ({ children, className }: ScrollRevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -21,7 +26,16 @@ const ScrollReveal = ({ children, className }) => {
   );
 };
 
-const ParallaxImage = ({ src, alt, width, height, layout, className }) => {
+interface ParallaxImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+  style?: CSSProperties;
+}
+
+const ParallaxImage = ({ src, alt, width, height, className, style }: ParallaxImageProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -41,13 +55,13 @@ const ParallaxImage = ({ src, alt, width, height, layout, className }) => {
       transition={{ duration: 1 }}
     >
       <motion.div style={{ y, scale }} className="h-full w-full">
-        <Image 
-          src={src} 
-          alt={alt} 
+        <Image
+          src={src}
+          alt={alt}
           className="object-cover w-full h-full"
           width={width}
           height={height}
-          layout={layout}
+          style={style}
         />
       </motion.div>
     </motion.div>

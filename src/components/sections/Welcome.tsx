@@ -1,10 +1,20 @@
 "use client"
 
 import Image from 'next/image';
-import React from 'react';
 import { motion } from 'framer-motion';
 
-const InfiniteHorizontalRow = ({ images, direction = 'right', speed = 20 }) => {
+interface RowImage {
+  src: string;
+  alt: string;
+}
+
+interface InfiniteHorizontalRowProps {
+  images: RowImage[];
+  direction?: 'right' | 'left';
+  speed?: number;
+}
+
+const InfiniteHorizontalRow = ({ images, direction = 'right', speed = 20 }: InfiniteHorizontalRowProps) => {
   // Calculate animation properties based on direction
   const animationProps = {
     right: {

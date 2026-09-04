@@ -1,10 +1,10 @@
-import Hero from "./components/home/Hero";
-import Services from "./components/home/Services";
-import Gallery from "./components/home/Gallery";
-import Venue from "./components/home/Venue";
-import ContactUs from "./components/home/ContactUs";
-import Rsvp from "./components/home/Rsvp";
-import Contacts from "./components/home/Contacts";
+import Hero from "@/components/sections/Hero";
+import Services from "@/components/sections/Services";
+import Gallery from "@/components/sections/Gallery";
+import Venue from "@/components/sections/Venue";
+import ContactUs from "@/components/sections/ContactUs";
+import Rsvp from "@/components/sections/Rsvp";
+import Contacts from "@/components/sections/Contacts";
 
 export default function Home() {
   return (

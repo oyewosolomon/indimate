@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import MidNav from './MidNav';
 import Welcome from './Welcome';
 

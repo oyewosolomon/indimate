@@ -1,5 +1,8 @@
-// layout.js
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { Italianno, Playfair_Display, Lato} from 'next/font/google';
+
+import { Toaster } from '@/components/ui/toaster';
 
 import "./globals.css";
 
@@ -15,19 +18,21 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
+  variable: '--font-playfair',
 });
 
 
 const lato = Lato({
   subsets: ['latin'],
   weight: ['400', '700'],
+  variable: '--font-lato',
 });
 
 const siteUrl = 'https://intimateweddingsbyfave.com';
 const title = 'Intimate Weddings By Fave | Destination & Intimate Wedding Planner in Lagos, Nigeria';
 const description = 'Intimate Weddings By Fave plans dreamy, ethereal destination and intimate weddings in Lagos, Nigeria. Full planning, decoration, and coordination for unconventional couples.';
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
@@ -134,7 +139,7 @@ const localBusinessJsonLd = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${italianno.variable} ${playfair.variable} ${lato.variable}`}>
       <body className={playfair.className}>
@@ -143,6 +148,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         {children}
+        <Toaster />
       </body>
     </html>
   );
