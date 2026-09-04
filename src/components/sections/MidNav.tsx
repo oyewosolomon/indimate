@@ -72,7 +72,7 @@ const MidNav = () => {
       <div style={{ height: navHeight }} aria-hidden="true" />
       {createPortal(
         <div
-          className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-300 ${
+          className={`fixed top-0 left-0 w-full z-40 bg-white shadow-md transition-transform duration-300 ${
             hidden ? '-translate-y-full' : 'translate-y-0'
           }`}
         >
