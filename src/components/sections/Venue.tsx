@@ -9,7 +9,7 @@ export default function Venue() {
       
       <div className="absolute inset-0">
         <Image 
-          src="/assets/images/image_5.png" 
+          src="/assets/images/home/reception-tablescape.png" 
           alt="Venue Background" 
           fill
           style={{ objectFit: 'cover' }}

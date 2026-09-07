@@ -152,7 +152,7 @@ const Services = () => {
     <div id="aboutus"
       className="min-h-screen z-20 relative text-white bg-black py-16 px-4 md:px-8 bg-cover bg-center"
       style={{
-        backgroundImage: `url('/assets/images/hero_background.png')`,
+        backgroundImage: `url('/assets/images/hero/about-section-background.png')`,
       }}
     >
       <motion.div

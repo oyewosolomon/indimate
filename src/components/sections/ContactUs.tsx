@@ -148,7 +148,8 @@ const ContactUs = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-8xl bg-white text-black mx-auto px-6 py-16 text-center"
+      id="plan-your-wedding"
+      className="max-w-8xl bg-white text-black mx-auto px-6 py-16 text-center scroll-mt-24"
     >
       <motion.h2
         variants={fadeUpVariants}
@@ -165,7 +166,7 @@ const ContactUs = () => {
       >
         <div className="relative">
           <Image
-            src="/assets/images/woman.png"
+            src="/assets/images/contact/founder-portrait.png"
             alt="Wedding Photographer"
             className="object-contain"
             width={600}
