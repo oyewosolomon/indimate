@@ -8,14 +8,14 @@ const Hero = () => {
     <div className="relative w-full z-20">
       {/* Hero Section */}
       <div className="h-screen w-full sticky top-0 z-20 bg-[#FAF8F5]">
-        {/* Full, uncropped hero photo — letterboxed so nothing is cut off */}
+        {/* Full-bleed hero photo, cropped in on very wide screens */}
         <Image
           src="/assets/images/hero/hero-main.jpeg"
           alt="Bride in a white gown beneath gold chandeliers, flanked by classical statues"
           fill
           priority
           sizes="100vw"
-          className="object-contain"
+          className="object-cover object-[50%_65%]"
           style={{ willChange: 'transform' }}
         />
         {/* Centered Text */}
