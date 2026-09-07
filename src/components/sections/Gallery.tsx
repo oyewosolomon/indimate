@@ -97,7 +97,7 @@ const Gallery = () => {
         transition={{ duration: 0.8 }}
       >
         <ParallaxImage 
-          src="/assets/images/Group_7685.png" 
+          src="/assets/images/home/gallery-highlights-collage.png" 
           alt="Wedding couple" 
           className="rounded-lg "
           width={100}
@@ -106,7 +106,7 @@ const Gallery = () => {
         />
         <div className="hidden">
         <ParallaxImage 
-          src="/assets/images/gallery-1.png" 
+          src="/assets/images/home/hidden-traditional-dance.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -114,7 +114,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-2.png" 
+          src="/assets/images/home/hidden-reception-details.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -122,7 +122,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-3.png" 
+          src="/assets/images/home/hidden-bride-veil-walkaway-bw.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -130,7 +130,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-4.png" 
+          src="/assets/images/home/hidden-garden-portrait-bw.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -138,7 +138,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-5.png" 
+          src="/assets/images/home/hidden-founder-headshot.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -146,7 +146,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-6.png" 
+          src="/assets/images/home/hidden-twin-brides.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -154,7 +154,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-7.png" 
+          src="/assets/images/home/hidden-joyful-embrace.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -162,7 +162,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-8.png" 
+          src="/assets/images/home/hidden-arch-kiss.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -170,7 +170,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/gallery-9.png" 
+          src="/assets/images/home/hidden-casual-couple.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -178,7 +178,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <ParallaxImage 
-          src="/assets/images/full-planning.jpg" 
+          src="/assets/images/services/full-planning.jpg" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -186,7 +186,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
-          src="/assets/images/gallery-11.png" 
+          src="/assets/images/home/hidden-traditional-first-dance.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -194,7 +194,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
-          src="/assets/images/gallery-12.png" 
+          src="/assets/images/home/hidden-string-lights-embrace.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -202,7 +202,7 @@ const Gallery = () => {
           style={{ width: '100%', height: 'auto' }}
         />
          <ParallaxImage 
-          src="/assets/images/gallery-13.png" 
+          src="/assets/images/home/hidden-reception-nightlife.png" 
           alt="Wedding couple" 
           className="block md:hidden"
           width={100}
@@ -225,7 +225,7 @@ const Gallery = () => {
             </ScrollReveal>
 
             <Image 
-              src="/assets/images/dinning.jpg" 
+              src="/assets/images/home/private-dining-host.jpg" 
               className='w-full block md:hidden' 
               width={450} 
               height={300} 
@@ -246,7 +246,7 @@ const Gallery = () => {
           </div>
           
           <ParallaxImage 
-            src="/assets/images/image_6.png" 
+            src="/assets/images/home/cocktail-garnish.png" 
             alt="Cocktail preparation" 
             className="rounded-lg"
             width={300}
@@ -262,7 +262,7 @@ const Gallery = () => {
        transition={{ duration: 0.8 }}
        className='w-full mx-auto'>
         <Image 
-          src="/assets/images/Artboard.jpeg" 
+          src="/assets/images/home/venue-details-collage.jpeg" 
           alt="Venue Background" 
           width={1200} // native width
           height={600} // native height

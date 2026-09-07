@@ -25,7 +25,7 @@ const Contacts = () => {
       <div className="absolute inset-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/bg-img.jpg"
+            src="/assets/images/contact/section-background.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -40,7 +40,7 @@ const Contacts = () => {
       <div className="relative z-10 flex flex-col items-center w-full py-24">
         <div className="mb-24">
           <Image
-            src="/assets/images/logo.png"
+            src="/assets/images/brand/logo.png"
             alt="Wedding Photographer"
             width={100}
             height={100}

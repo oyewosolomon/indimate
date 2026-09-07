@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     locale: 'en_NG',
     images: [
       {
-        url: '/assets/images/image_2.jpg',
+        url: '/assets/images/stories/beachside-union-ceremony-aisle.jpg',
         width: 1200,
         height: 630,
         alt: 'Intimate Weddings By Fave — destination wedding decor',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/assets/images/image_2.jpg'],
+    images: ['/assets/images/stories/beachside-union-ceremony-aisle.jpg'],
   },
   robots: {
     index: true,
@@ -89,7 +89,7 @@ const localBusinessJsonLd = {
   url: siteUrl,
   telephone: '+2348166734100',
   email: 'bookings@intimateweddingsbyfave.com',
-  image: `${siteUrl}/assets/images/logo.png`,
+  image: `${siteUrl}/assets/images/brand/logo.png`,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
