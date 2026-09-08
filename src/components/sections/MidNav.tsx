@@ -11,7 +11,7 @@ const NavLinks = () => (
     {/* Brand */}
     <Link href="/" className='flex items-center gap-2'>
       <Image className='w-8 h-8 lg:w-10 lg:h-10' src="/assets/images/brand/logo.png" width={100} height={100} alt="Logo" />
-      <span className='text-sm lg:text-base tracking-[0.2em] uppercase text-black whitespace-nowrap'>Intimate Weddings By Fave</span>
+      <span className='text-sm lg:text-base tracking-[0.2em] uppercase text-black whitespace-nowrap'>WEDDINGS BY MAISON FAVE</span>
     </Link>
 
     {/* Menu */}
