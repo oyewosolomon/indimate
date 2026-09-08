@@ -6,6 +6,8 @@ import Welcome from './Welcome';
 const Hero = () => {
   return (
     <div className="relative w-full z-20">
+      <MidNav />
+
       {/* Hero Section */}
       <div className="h-screen w-full sticky top-0 z-20 bg-[#FAF8F5]">
         {/* Full-bleed hero photo, cropped in on very wide screens */}
@@ -28,7 +30,6 @@ const Hero = () => {
 
       {/* Content that will scroll over the hero */}
       <div className="relative bg-white min-h-screen w-full z-20">
-        <MidNav />
         <Welcome />
       </div>
     </div>

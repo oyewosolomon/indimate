@@ -6,23 +6,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const NavLinks = () => (
-  <div className='grid grid-cols-3 items-center gap-4 px-4 w-full lg:px-12 lg:gap-10'>
+  <div className='w-full px-4 py-3 lg:px-12 flex flex-col items-center gap-3'>
 
-    {/* Left Links */}
-    <div className='flex flex-col md:flex-row gap-2 md:gap-4 justify-center lg:justify-start'>
+    {/* Brand */}
+    <Link href="/" className='flex items-center gap-2'>
+      <Image className='w-8 h-8 lg:w-10 lg:h-10' src="/assets/images/brand/logo.png" width={100} height={100} alt="Logo" />
+      <span className='text-sm lg:text-base tracking-[0.2em] uppercase text-black whitespace-nowrap'>Intimate Weddings By Fave</span>
+    </Link>
+
+    {/* Menu */}
+    <div className='flex w-full items-center justify-between text-lg lg:text-xl'>
       <Link href="/#aboutus" className='text-black hover:text-green-700'>About us</Link>
       <Link href="/portfolio" className='text-black hover:text-green-700'>Portfolio</Link>
-    </div>
-
-    {/* Logo */}
-    <div className='flex justify-center'>
-      <Link href="/">
-        <Image className='w-20 h-20 lg:w-22 lg:h-22' src="/assets/images/brand/logo.png" width={100} height={100} alt="Logo" />
-      </Link>
-    </div>
-
-    {/* Right Links */}
-    <div className='flex flex-col md:flex-row  gap-2 md:gap-4  justify-end lg:justify-end'>
       <Link href="/#testimonial" className='text-black hover:text-green-700'>Testimonial</Link>
       <a href="#" className='text-black hover:text-green-700'>Blog</a>
     </div>

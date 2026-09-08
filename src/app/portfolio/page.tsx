@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 const stripImages = [
-  { src: '/assets/images/stories/beachside-union-floral-arch-groom.png', alt: 'Groom beneath a beachside floral arch' },
-  { src: '/assets/images/portfolio/traditional-royal-attire.jpeg', alt: 'Couple in traditional Nigerian royal attire' },
-  { src: '/assets/images/stories/garden-vow-floral-canopy.png', alt: 'Couple exchanging vows beneath a floral canopy' },
+  { src: '/assets/images/portfolio/africa/confetti-celebration.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
+  { src: '/assets/images/portfolio/traditional-weddings/royal-attire-portrait.jpeg', alt: 'Couple walking hand in hand across the lawn of a grand French chateau' },
+  { src: '/assets/images/portfolio/middle-east/desert-veil-portrait.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
 ];
 
 export default function PortfolioPage() {
