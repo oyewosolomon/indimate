@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 const stripImages = [
-  { src: '/assets/images/portfolio/africa/confetti-celebration.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
+  { src: '/assets/images/portfolio/africa/confetti-skyline.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
   { src: '/assets/images/portfolio/traditional-weddings/royal-attire-portrait.jpeg', alt: 'Couple walking hand in hand across the lawn of a grand French chateau' },
-  { src: '/assets/images/portfolio/middle-east/desert-veil-portrait.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
+  { src: '/assets/images/portfolio/middle-east/parasol-desert-arch.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
 ];
 
 export default function PortfolioPage() {
@@ -30,7 +30,7 @@ export default function PortfolioPage() {
         <h1 className="text-4xl md:text-6xl text-gray-800">
           Curated for the
           <br />
-          <span className="italic">Unconventional Couple</span>
+          <span>Unconventional Couple</span>
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           With words like rare, ethereal, delicate and effortless, we create iconic weddings

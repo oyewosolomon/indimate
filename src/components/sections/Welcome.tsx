@@ -4,9 +4,9 @@ import Image from 'next/image';
 import PortfolioCategoryGrid from './PortfolioCategoryGrid';
 
 const stripImages = [
-  { src: '/assets/images/portfolio/africa/confetti-celebration.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
+  { src: '/assets/images/portfolio/africa/confetti-skyline.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
   { src: '/assets/images/portfolio/traditional-weddings/royal-attire-portrait.jpeg', alt: 'Couple walking hand in hand across the lawn of a grand French chateau' },
-  { src: '/assets/images/portfolio/middle-east/desert-veil-portrait.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
+  { src: '/assets/images/portfolio/middle-east/parasol-desert-arch.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
 ];
 
 const Welcome = () => {
