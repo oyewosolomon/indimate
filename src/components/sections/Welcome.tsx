@@ -11,9 +11,9 @@ const stripImages = [
 
 const Welcome = () => {
   return (
-    <div className="max-w-8xl mx-auto px-4 py-16 bg-white text-gray-800">
+    <div className="max-w-8xl mx-auto bg-white text-gray-800">
       {/* Hero Text Section */}
-      <div className="text-center mb-16 space-y-6">
+      <div className="bg-[#FAF8F5] px-4 py-16 text-center space-y-6">
         <h2 className="text-4xl leading-10 md:text-7xl font-medium text-gray-800">
           Dreamy, Ethereal, Curated for the
           <br />
@@ -25,17 +25,23 @@ const Welcome = () => {
       </div>
 
 
-      <div className="max-w-6xl mx-auto px-4 pb-16 grid grid-cols-3 gap-4">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-3">
         {stripImages.map((image) => (
-          <div key={image.src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <div key={image.src} className="relative aspect-[4/3] overflow-hidden">
             <Image src={image.src} alt={image.alt} fill sizes="33vw" className="object-cover" />
           </div>
         ))}
       </div>
-      
+
+      <div className="text-center py-8">
+        <h2 className="text-2xl md:text-3xl tracking-[0.3em] text-gray-800 uppercase">
+          The Portfolio
+        </h2>
+      </div>
+
       <PortfolioCategoryGrid />
 
-      <div className="mt-8 text-center">
+      <div className="mt-8 pb-16 text-center">
         <Link
           href="/portfolio"
           className="inline-block border border-[#0A341F] text-[#0A341F] text-sm tracking-[0.2em] uppercase px-8 py-3 hover:bg-[#0A341F] hover:text-white transition-colors"
