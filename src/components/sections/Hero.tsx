@@ -9,15 +9,19 @@ const Hero = () => {
       <MidNav />
 
       {/* Hero Section */}
-      <div className="h-screen w-full sticky top-0 z-20 bg-[#FAF8F5]">
-        {/* Full-bleed hero photo, cropped in on very wide screens */}
+      <div className="h-screen w-full sticky top-0 z-20 bg-[#FAF8F5] overflow-hidden">
+        {/* Full-bleed hero photo, cropped in on very wide screens. On mobile the
+            container is much taller relative to the image than object-position
+            can crop for (cover ends up scaling to fill width with no vertical
+            slack), so we scale the image vertically from the bottom edge to
+            push the flowers/ceiling at the top out of view. */}
         <Image
           src="/assets/images/hero/hero-main.jpeg"
           alt="Bride in a white gown beneath gold chandeliers, flanked by classical statues"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_65%]"
+          className="object-cover object-[50%_65%] origin-bottom scale-150 md:scale-100"
           style={{ willChange: 'transform' }}
         />
         {/* Centered Text */}

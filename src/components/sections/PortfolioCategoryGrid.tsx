@@ -24,7 +24,7 @@ const PortfolioCategoryGrid = () => {
         >
           <Link
             href={`/portfolio/${category.slug}`}
-            className="group relative block aspect-[16/9] w-full overflow-hidden rounded-lg"
+            className="group relative block aspect-[16/9] w-full overflow-hidden"
           >
             <Image
               src={category.coverImage}
