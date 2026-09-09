@@ -24,30 +24,22 @@ const AnimateOnScroll = ({ children }: { children: ReactNode }) => {
 };
 
 
-const MOBILE_MEDIA_QUERY = '(max-width: 767px)';
-
 const ServiceCard = ({ title, backgroundImage, featureImage, content }: Service) => {
-  // Desktop reveals content on hover (pure CSS, no state). This is only for
-  // the mobile full-screen modal, which is the one case that should lock
-  // background scroll.
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  // Content is revealed in a tap-to-open popup on every screen size, so we
+  // lock background scroll whenever it's open, regardless of device.
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (!isMobileOpen) return;
-    if (!window.matchMedia(MOBILE_MEDIA_QUERY).matches) return;
+    if (!isOpen) return;
 
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isMobileOpen]);
+  }, [isOpen]);
 
-  const openOnMobile = () => {
-    if (window.matchMedia(MOBILE_MEDIA_QUERY).matches) {
-      setIsMobileOpen(true);
-    }
-  };
-  const closeMobile = () => setIsMobileOpen(false);
+  const openCard = () => setIsOpen(true);
+  const closeCard = () => setIsOpen(false);
 
   const renderedContent = content.map((item, index) => {
     if (item.type === "p") {
@@ -68,58 +60,35 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }: Service)
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        onClick={openOnMobile}
+        onClick={openCard}
       >
-        {/* Closed state: always visible on mobile, fades out on hover on desktop */}
-        <div className="absolute inset-0 flex flex-col text-center items-center justify-center text-white p-3 md:p-6 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50 md:group-hover:opacity-0">
+        {/* Closed state: always visible, tap/click opens the popup with the full content */}
+        <div className="absolute inset-0 flex flex-col text-center items-center justify-center text-white p-3 md:p-6 bg-black/40 transition-colors duration-300 group-hover:bg-black/50">
           <h3 className="text-md md:text-3xl font-semibold mb-2">{title}</h3>
-          <span className="text-[11px] font-semibold tracking-wider opacity-80 text-[#D4A300] md:hidden">TAP TO READ</span>
-          <span className="hidden md:inline text-md font-semibold tracking-wider opacity-80 text-[#D4A300]">HOVER TO READ</span>
-        </div>
-
-        {/* Desktop-only: revealed on hover, dismissed simply by moving the cursor away */}
-        <div className="absolute inset-0 hidden md:block overflow-y-auto bg-white opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto">
-          <div className="flex flex-col items-center p-6">
-            <h3 className="text-md font-bold mb-3 text-gray-900">{title}</h3>
-            <div className="text-sm text-left space-y-2 px-3 text-gray-900 mb-6">
-              {renderedContent}
-            </div>
-            {featureImage && (
-              <div className="w-full">
-                <Image
-                  src={featureImage}
-                  alt={title}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            )}
-          </div>
+          <span className="text-[11px] md:text-md font-semibold tracking-wider opacity-80 text-[#D4A300]">TAP TO READ</span>
         </div>
       </div>
 
-      {/* Mobile-only full-screen modal, opened by tapping the card. A separate
+      {/* Popup opened by tapping/clicking the card, on every screen size. A separate
           backdrop layer (rather than margin-on-the-card) makes "tap outside
           to close" reach an element that's actually there to receive it. */}
-      {isMobileOpen && (
+      {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 z-50 md:hidden"
-          onClick={closeMobile}
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          onClick={closeCard}
         >
           <div
-            className="absolute inset-3 bg-white rounded-lg flex flex-col overflow-hidden"
+            className="w-full max-w-2xl md:max-w-3xl h-[70vh] bg-white rounded-lg flex flex-col overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            <div className="flex justify-between items-center p-4 md:p-6 border-b">
+              <h3 className="text-lg md:text-2xl font-semibold text-gray-900">{title}</h3>
               <button
-                onClick={closeMobile}
-                className="text-gray-600 hover:text-gray-900 text-xl"
+                onClick={closeCard}
+                className="text-gray-600 hover:text-gray-900 text-xl md:text-2xl"
                 aria-label="Close"
               >
                 ×
@@ -127,17 +96,7 @@ const ServiceCard = ({ title, backgroundImage, featureImage, content }: Service)
             </div>
             <div className="flex-1 text-gray-900 overflow-y-auto">
               <div className="h-full flex flex-col justify-start space-y-4 text-left">
-                <div className="p-6 text-base">{renderedContent}</div>
-                {featureImage && (
-                  <Image
-                    src={featureImage}
-                    alt={title}
-                    width={1200}
-                    height={800}
-                    className="w-full"
-                    style={{ objectFit: 'contain' }}
-                  />
-                )}
+                <div className="p-6 md:p-8 text-base md:text-lg leading-relaxed">{renderedContent}</div>
               </div>
             </div>
           </div>

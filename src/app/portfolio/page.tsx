@@ -38,7 +38,7 @@ export default function PortfolioPage() {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 pb-16 grid grid-cols-3 gap-4">
+      <div className="max-w-6xl mx-auto px-4 pb-16 grid grid-cols-3 gap-4">
         {stripImages.map((image) => (
           <div key={image.src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image src={image.src} alt={image.alt} fill sizes="33vw" className="object-cover" />
