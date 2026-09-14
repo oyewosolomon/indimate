@@ -1,8 +1,11 @@
 "use client"
 
-import { motion, type Variants } from "framer-motion";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { X } from "lucide-react";
 
-import { testimonials } from "@/lib/data/testimonials";
+import { coupleStories } from "@/lib/data/stories";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -10,6 +13,24 @@ const fadeUp: Variants = {
 };
 
 const Testimonial = () => {
+  const [openId, setOpenId] = useState<string | null>(null);
+  const openStory = coupleStories.find((story) => story.id === openId) ?? null;
+
+  useEffect(() => {
+    if (!openId) return;
+
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenId(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [openId]);
+
   return (
     <div id="testimonial" className="bg-[#FAF8F5] py-20 px-4">
       <div className="max-w-6xl mx-auto text-center mb-16">
@@ -19,77 +40,128 @@ const Testimonial = () => {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
-        {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.id}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-10">
+        {coupleStories.map((story, index) => (
+          <motion.button
+            key={story.id}
+            type="button"
+            onClick={() => setOpenId(story.id)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={fadeUp}
-            className="relative pt-8"
+            whileHover={{ y: -6 }}
+            whileTap={{ scale: 0.97 }}
+            className="group flex flex-col items-center text-center"
           >
-            {/* Card peeking out of the envelope */}
-            <div
-              className="absolute left-1/2 top-0 z-10 flex h-14 w-40 -translate-x-1/2 -translate-y-8 items-start justify-center rounded-[2px] bg-white pt-1 shadow-md"
-              style={{ transform: `translateX(-50%) translateY(-2rem) rotate(${index % 2 === 0 ? -3 : 3}deg)` }}
+            <motion.div
+              layoutId={`envelope-${story.id}`}
+              className="relative aspect-square w-full max-w-[340px] drop-shadow-[0_14px_22px_rgba(0,0,0,0.28)] transition-[filter] duration-300 group-hover:drop-shadow-[0_20px_30px_rgba(0,0,0,0.38)]"
+              style={{ transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)` }}
             >
-              <span className="font-serif text-xl leading-none text-[#0A341F]/25">&ldquo;</span>
-            </div>
-
-            {/* Envelope pouch */}
-            <div
-              className="relative overflow-hidden rounded-sm shadow-[0_18px_30px_-12px_rgba(0,0,0,0.25)]"
-              style={{ background: "linear-gradient(180deg, #F8F2E7 0%, #EFE4D2 100%)" }}
-            >
-              {/* Top flap */}
-              <div
-                className="absolute inset-x-0 top-0 h-20"
-                style={{
-                  clipPath: "polygon(0% 0%, 50% 100%, 100% 0%)",
-                  background: "linear-gradient(160deg, rgba(0,0,0,0.09), rgba(0,0,0,0) 65%)",
-                }}
+              <Image
+                src="/assets/images/stories/stories-bg.png"
+                alt=""
+                fill
+                sizes="(max-width: 640px) 80vw, 340px"
+                className="object-contain"
               />
-              {/* Left flap shading */}
-              <div
-                className="absolute inset-y-0 left-0 w-1/2"
-                style={{
-                  clipPath: "polygon(0% 0%, 100% 80px, 0% 100%)",
-                  background: "linear-gradient(100deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 70%)",
-                }}
-              />
-              {/* Right flap shading */}
-              <div
-                className="absolute inset-y-0 right-0 w-1/2"
-                style={{
-                  clipPath: "polygon(100% 0%, 0% 80px, 100% 100%)",
-                  background: "linear-gradient(260deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 70%)",
-                }}
-              />
-
-              {/* Wax seal */}
-              <div
-                className="absolute left-1/2 top-16 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.25)]"
-                style={{ background: "radial-gradient(circle at 35% 30%, #EAD08A, #B8912F 75%)" }}
-              />
-
-              {/* Content */}
-              <div className="relative flex flex-col px-7 pb-8 pt-24">
-                <p className="mb-6 text-gray-700 leading-relaxed">{testimonial.quote}</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.event}</p>
-                  {testimonial.isPlaceholder && (
-                    <span className="inline-block mt-2 rounded-full bg-[#0A341F]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#0A341F]">
-                      Sample testimonial
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+            <p className="mt-5 font-semibold tracking-wide text-gray-900">
+              {story.names}
+            </p>
+            <span className="mt-1 text-xs uppercase tracking-widest text-[#0A341F]/60">
+              Read their story
+            </span>
+          </motion.button>
         ))}
       </div>
+
+      <AnimatePresence>
+        {openStory && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 sm:p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpenId(null)}
+          >
+            <motion.div
+              layoutId={`envelope-${openStory.id}`}
+              onClick={(event) => event.stopPropagation()}
+              className="relative flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-lg bg-[#FAF8F5] shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setOpenId(null)}
+                aria-label="Close story"
+                className="absolute right-4 top-4 z-10 rounded-full bg-white/90 p-1.5 text-gray-700 shadow hover:bg-white"
+              >
+                <X className="h-4 w-4" />
+              </button>
+
+              <div className="relative h-40 w-full shrink-0 sm:h-52">
+                <Image
+                  src="/assets/images/stories/stories-bg.png"
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-transparent to-transparent" />
+              </div>
+
+              <div className="overflow-y-auto px-6 pb-8 pt-2 sm:px-10">
+                <motion.h3
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15, duration: 0.4 }}
+                  className="mb-6 text-center text-3xl text-gray-900"
+                >
+                  {openStory.names}
+                </motion.h3>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25, duration: 0.5 }}
+                  className="space-y-4"
+                >
+                  {openStory.quote.map((paragraph, index) => (
+                    <p key={index} className="leading-relaxed text-gray-700">
+                      {paragraph}
+                    </p>
+                  ))}
+                </motion.div>
+
+                {openStory.images.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.35, duration: 0.6 }}
+                    className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3"
+                  >
+                    {openStory.images.map((image) => (
+                      <div
+                        key={image.src}
+                        className="relative aspect-[3/4] overflow-hidden rounded-md"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes="(max-width: 640px) 50vw, 33vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

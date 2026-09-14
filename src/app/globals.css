@@ -86,3 +86,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero photo zoom, keyed to viewport aspect ratio rather than a width
+   breakpoint so a narrow/short desktop window gets the same top-of-frame
+   crop as a phone. Below 1:1 falls through to the scale-150 Tailwind class
+   on the element itself. */
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 3/2) {
+  .hero-photo {
+    --tw-scale-x: 1.25;
+    --tw-scale-y: 1.25;
+  }
+}
+
+@media (min-aspect-ratio: 3/2) {
+  .hero-photo {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+  }
+}

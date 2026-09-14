@@ -10,18 +10,21 @@ const Hero = () => {
 
       {/* Hero Section */}
       <div className="h-screen w-full sticky top-0 z-20 bg-[#FAF8F5] overflow-hidden">
-        {/* Full-bleed hero photo, cropped in on very wide screens. On mobile the
-            container is much taller relative to the image than object-position
-            can crop for (cover ends up scaling to fill width with no vertical
-            slack), so we scale the image vertically from the bottom edge to
-            push the flowers/ceiling at the top out of view. */}
+        {/* Full-bleed hero photo. Whenever the viewport is taller relative to
+            its width than the photo itself, object-position alone can't crop
+            enough vertical slack and the plain ceiling above the chandeliers
+            peeks out at the top. We compensate by zooming in from the bottom
+            edge, with the zoom amount keyed to viewport aspect ratio (see
+            .hero-photo rules in globals.css) rather than a width breakpoint,
+            since a narrow/short desktop window has the same problem as a
+            phone. */}
         <Image
           src="/assets/images/hero/hero-main.jpeg"
           alt="Bride in a white gown beneath gold chandeliers, flanked by classical statues"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_65%] origin-bottom scale-150 md:scale-100"
+          className="hero-photo object-cover object-[50%_65%] origin-bottom scale-150"
           style={{ willChange: 'transform' }}
         />
         {/* Centered Text */}
