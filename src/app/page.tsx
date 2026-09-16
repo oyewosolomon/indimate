@@ -10,11 +10,11 @@ import Contacts from "@/components/sections/Contacts";
 export default function Home() {
   return (
     <div>
-      <Hero />      
+      <Hero />
       <Services/>
+      <Testimonial/>
       <Gallery/>
       <Venue/>
-      <Testimonial/>
       <ContactUs/>
       <Rsvp/>
       <Contacts/>
