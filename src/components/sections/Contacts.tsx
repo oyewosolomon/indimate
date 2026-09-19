@@ -38,16 +38,6 @@ const Contacts = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center w-full py-24">
-        <div className="mb-24">
-          <Image
-            src="/assets/images/brand/logo.png"
-            alt="Wedding Photographer"
-            width={100}
-            height={100}
-            className="object-contain rounded-xl"
-          />
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 w-full max-w-4xl mb-24">
           {/* Contact Us */}
           <motion.div
