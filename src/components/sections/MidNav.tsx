@@ -5,14 +5,25 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const currentYear = new Date().getFullYear();
+
 const NavLinks = () => (
   <div className='w-full px-4 py-6 lg:px-12 flex flex-col items-center gap-3'>
 
-    {/* Brand */}
-    <Link href="/" className='flex items-center gap-2'>
-      <Image className='w-8 h-8 lg:w-10 lg:h-10' src="/assets/images/brand/logo.png" width={100} height={100} alt="Logo" />
-      <span className='text-sm lg:text-lg  tracking-[0.2em] uppercase text-black whitespace-nowrap'>WEDDINGS BY MAISON FAVE</span>
-    </Link>
+    {/* Brand. The copyright sits outside the home link so the two aren't nested
+        anchors — it points at the parent creative house instead. */}
+    <div className='flex flex-col items-center gap-1'>
+      <Link href="/" className='flex items-center gap-2'>
+        <Image className='w-8 h-8 lg:w-10 lg:h-10' src="/assets/images/brand/logo.png" width={100} height={100} alt="Logo" />
+        <span className='text-sm lg:text-lg  tracking-[0.2em] uppercase text-black whitespace-nowrap'>WEDDINGS BY MAISON FAVE</span>
+      </Link>
+      <Link
+        href="/maison-fave"
+        className='text-[10px] lg:text-xs tracking-[0.18em] uppercase text-neutral-500 hover:text-green-700 whitespace-nowrap'
+      >
+        &copy; {currentYear} Maison Fave
+      </Link>
+    </div>
 
     {/* Menu */}
     <div className='flex w-full items-center justify-between text-lg lg:text-xl'>

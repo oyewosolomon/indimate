@@ -166,7 +166,7 @@ const ContactUs = () => {
       >
         <div className="relative">
           <Image
-            src="/assets/images/contact/founder-portrait.png"
+            src="/assets/images/FAV.jpeg"
             alt="Wedding Photographer"
             className="object-contain"
             width={600}
