@@ -16,7 +16,7 @@ export default function Home() {
       <Gallery/>
       <Venue/>
       <ContactUs/>
-      <Rsvp/>
+      {/* <Rsvp/> */}
       <Contacts/>
     </div>
   );

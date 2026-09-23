@@ -14,7 +14,9 @@ module.exports = {
   		},
   		fontFamily: {
   			gilroy: ['Gilroy', 'sans-serif'],
-  			inter: 'var(--font-inter)'
+  			inter: 'var(--font-inter)',
+  			playfair: ['var(--font-playfair)', 'serif'],
+  			lato: ['var(--font-lato)', 'sans-serif']
   		},
   		colors: {
   			background: 'hsl(var(--background))',
