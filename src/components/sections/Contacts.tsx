@@ -52,7 +52,7 @@ const Contacts = () => {
             className="border border-white rounded-md p-10 text-center text-white backdrop-blur-sm"
           >
             <h3 className="text-5xl mb-3">Contact us</h3>
-            <p className="mb-1">bookings@intimateweddingsbyfave.com</p>
+            <p className="mb-1">bookings@weddingsbymaisonfave.com</p>
             <p>+234 8166734100</p>
           </motion.div>
 
