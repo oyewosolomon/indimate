@@ -33,7 +33,7 @@ export const serviceData: Service[] = [
   },
   {
     title: "Full Coordinating Services",
-    backgroundImage: "/assets/images/services/full-coordination.jpg",
+    backgroundImage: "/assets/images/portfolio/middle-east/parasol-desert-arch.jpeg",
     featureImage: "/assets/images/portfolio/africa/garden-aisle-walk.jpeg",
     content: [
       { type: "p", text: "We bring your wedding vision to life with our expert coordinating services. From personalized planning to day-of coordination, we handle every detail to ensure a seamless celebration." },
@@ -44,7 +44,7 @@ export const serviceData: Service[] = [
 export const processData: Service[] = [
   {
     title: "Vision Development",
-    backgroundImage: "/assets/images/services/vision-development.jpg",
+    backgroundImage: "/assets/images/portfolio/africa/white-arch-portrait.jpeg",
     featureImage: "/assets/images/portfolio/europe/four-poster-bed-portrait.jpeg",
     content: [
       { type: "p", text: "Our process begins with a personalized consultation, where we take the time to understand your personalities, preferences, and aspirations." },
