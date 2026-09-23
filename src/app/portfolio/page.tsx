@@ -9,7 +9,7 @@ import PortfolioCategoryGrid from '@/components/sections/PortfolioCategoryGrid';
 export const metadata: Metadata = {
   title: 'Portfolio',
   description:
-    'Browse real weddings planned and designed by Intimate Weddings By Fave — from Lagos gardens to European estates, desert celebrations and traditional ceremonies.',
+    'Browse real weddings planned and designed by Weddings by Maison Fave — from Lagos gardens to European estates, desert celebrations and traditional ceremonies.',
   alternates: {
     canonical: '/portfolio',
   },

@@ -29,14 +29,14 @@ const lato = Lato({
 });
 
 const siteUrl = 'https://intimateweddingsbyfave.com';
-const title = 'Intimate Weddings By Fave | Destination & Intimate Wedding Planner in Lagos, Nigeria';
-const description = 'Intimate Weddings By Fave plans dreamy, ethereal destination and intimate weddings in Lagos, Nigeria. Full planning, decoration, and coordination for unconventional couples.';
+const title = 'Weddings by Maison Fave | Destination & Intimate Wedding Planner in Lagos, Nigeria';
+const description = 'Weddings by Maison Fave plans dreamy, ethereal destination and intimate weddings in Lagos, Nigeria. Full planning, decoration, and coordination for unconventional couples.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: '%s | Intimate Weddings By Fave',
+    template: '%s | Weddings by Maison Fave',
   },
   description,
   keywords: [
