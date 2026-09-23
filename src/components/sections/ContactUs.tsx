@@ -155,7 +155,7 @@ const ContactUs = () => {
         variants={fadeUpVariants}
         className="text-3xl md:text-7xl mb-8"
       >
-        Intimate Weddings By Fave
+        Weddings by Maison Fave
       </motion.h2>
       
       <motion.div 
@@ -183,7 +183,7 @@ const ContactUs = () => {
         feel out of reach unless you actually travel to the country. I wanted to break away 
         from the typical Lagos wedding scene and offer something different. I wanted 
         couples to experience their special day in new and magical ways, like a fairy tale 
-        come to life. That&apos;s why I started intimate weddings by Fave
+        come to life. That&apos;s why I started Weddings by Maison Fave
       </motion.p>
 
       <Dialog open={open} onOpenChange={setOpen}>
