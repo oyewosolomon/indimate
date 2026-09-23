@@ -24,7 +24,7 @@ const OurBrands = () => {
   return (
     <section id="our-brands" className="w-full scroll-mt-24 bg-[#F6F1E9] px-6 py-16 lg:px-[6vw] lg:py-20">
       <div>
-        <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-[1fr_28rem_auto] lg:gap-12">
+        <div className="grid grid-cols-1 px-5 lg:px-10 items-end gap-8 lg:grid-cols-[1fr_28rem_auto] lg:gap-12">
           <div>
             <p className="font-lato text-[11px] uppercase tracking-[0.3em] text-[#8A7361]">
               The Maison Fave house

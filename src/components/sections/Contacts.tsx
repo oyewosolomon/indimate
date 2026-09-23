@@ -2,7 +2,10 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, useInView, type Variants } from 'framer-motion';
+
+const currentYear = new Date().getFullYear();
 
 const Contacts = () => {
   // Create refs for each animated section
@@ -67,6 +70,14 @@ const Contacts = () => {
             <p>Saturday - Sunday: 1:00pm - 6pm</p>
           </motion.div>
         </div>
+
+        {/* Footer credit — points at the parent creative house. */}
+        <Link
+          href="/maison-fave"
+          className="text-[10px] lg:text-xs tracking-[0.18em] uppercase text-white/70 hover:text-white whitespace-nowrap"
+        >
+          &copy; {currentYear} Maison Fave
+        </Link>
       </div>
     </div>
   );
