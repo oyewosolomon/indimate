@@ -88,7 +88,7 @@ const localBusinessJsonLd = {
   description,
   url: siteUrl,
   telephone: '+2348166734100',
-  email: 'bookings@intimateweddingsbyfave.com',
+  email: 'bookings@weddingsbymaisonfave.com',
   image: `${siteUrl}/assets/images/brand/logo.png`,
   priceRange: '$$',
   address: {
