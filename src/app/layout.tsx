@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Italianno, Playfair_Display, Lato} from 'next/font/google';
 
 import { Toaster } from '@/components/ui/toaster';
@@ -29,6 +30,7 @@ const lato = Lato({
 });
 
 const siteUrl = 'https://weddingsbymaisonfave.com';
+const gtmId = 'GTM-PV8SB8PK';
 const title = 'Weddings by Maison Fave | Destination & Intimate Wedding Planner in Lagos, Nigeria';
 const description = 'Weddings by Maison Fave plans dreamy, ethereal destination and intimate weddings in Lagos, Nigeria. Full planning, decoration, and coordination for unconventional couples.';
 
@@ -143,7 +145,17 @@ const localBusinessJsonLd = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${italianno.variable} ${playfair.variable} ${lato.variable}`}>
+      <GoogleTagManager gtmId={gtmId} />
       <body className={playfair.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
