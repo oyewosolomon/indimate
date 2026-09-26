@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const siteUrl = 'https://intimateweddingsbyfave.com';
+const siteUrl = 'https://weddingsbymaisonfave.com';
 
 export const dynamic = 'force-static';
 
