@@ -15,11 +15,11 @@ const NavLinks = () => (
     </Link>
 
     {/* Menu */}
-    <div className='flex w-full items-center justify-between text-lg lg:text-xl'>
+    <div className='-mx-4 flex w-[calc(100%+2rem)] items-center gap-8 overflow-x-auto whitespace-nowrap px-4 text-base [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:w-full sm:justify-between sm:gap-0 sm:overflow-visible sm:px-0 sm:text-lg lg:text-xl'>
       <Link href="/#aboutus" className='text-black hover:text-green-700'>About us</Link>
       <Link href="/portfolio" className='text-black hover:text-green-700'>Portfolio</Link>
       <Link href="/#testimonial" className='text-black hover:text-green-700'>Testimonial</Link>
-      <a href="#" className='text-black hover:text-green-700'>Blog</a>
+      <Link href="/maison-fave" className='text-black hover:text-green-700'>Maison Fave</Link>
     </div>
 
   </div>

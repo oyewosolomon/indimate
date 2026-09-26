@@ -40,7 +40,7 @@ const Testimonial = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-10">
+      <div className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-px-4 px-4 py-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-auto sm:grid sm:max-w-7xl sm:grid-cols-3 sm:gap-10 sm:overflow-visible sm:px-0 sm:py-0">
         {coupleStories.map((story, index) => (
           <motion.button
             key={story.id}
@@ -52,7 +52,7 @@ const Testimonial = () => {
             variants={fadeUp}
             whileHover={{ y: -6 }}
             whileTap={{ scale: 0.97 }}
-            className="group flex flex-col items-center text-center"
+            className="group flex w-[78vw] shrink-0 snap-center flex-col items-center text-center sm:w-auto"
           >
             <motion.div
               layoutId={`envelope-${story.id}`}

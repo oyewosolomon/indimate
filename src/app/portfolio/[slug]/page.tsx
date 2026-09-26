@@ -63,7 +63,7 @@ export default async function PortfolioCategoryPage(
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-12 text-center">
-        <p className="text-lg text-gray-600">{category.description}</p>
+       
       </div>
 
       <div className="max-w-6xl mx-auto px-4 pb-20 columns-1 gap-4 sm:columns-2 lg:columns-3">
