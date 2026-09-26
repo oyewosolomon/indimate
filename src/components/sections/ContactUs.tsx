@@ -191,7 +191,7 @@ const ContactUs = () => {
           <motion.button 
             variants={buttonVariants}
             whileHover="hover"
-            className="bg-[#0A341F] text-white text-2xl px-6 py-2 rounded-3xl hover:bg-green-800 transition-colors"
+            className="bg-[#708238] text-white text-2xl px-6 py-2 rounded-3xl hover:bg-[#5A6A2C] transition-colors"
           >
             Contact us
           </motion.button>
