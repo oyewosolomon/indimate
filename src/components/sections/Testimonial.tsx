@@ -60,7 +60,7 @@ const Testimonial = () => {
               style={{ transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)` }}
             >
               <Image
-                src="/assets/images/stories/stories-bg.png"
+                src="/assets/images/stories/stories-bg.webp"
                 alt=""
                 fill
                 sizes="(max-width: 640px) 80vw, 340px"
@@ -102,7 +102,7 @@ const Testimonial = () => {
 
               <div className="relative h-40 w-full shrink-0 sm:h-52">
                 <Image
-                  src="/assets/images/stories/stories-bg.png"
+                  src="/assets/images/stories/stories-bg.webp"
                   alt=""
                   fill
                   sizes="100vw"

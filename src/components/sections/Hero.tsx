@@ -19,7 +19,7 @@ const Hero = () => {
             since a narrow/short desktop window has the same problem as a
             phone. */}
         <Image
-          src="/assets/images/hero/hero-main.jpeg"
+          src="/assets/images/hero/hero-main.webp"
           alt="Bride in a white gown beneath gold chandeliers, flanked by classical statues"
           fill
           priority

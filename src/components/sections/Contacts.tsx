@@ -28,7 +28,7 @@ const Contacts = () => {
       <div className="absolute inset-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/contact/section-background.jpg"
+            src="/assets/images/contact/section-background.webp"
             alt="Background"
             fill
             className="object-cover"

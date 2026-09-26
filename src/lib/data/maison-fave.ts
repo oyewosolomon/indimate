@@ -15,12 +15,12 @@ export const maisonFaveImages = {
   },
   /** Design calls for: a curved-sofa living room — interior/spatial work. */
   whatWeDo: {
-    src: '/assets/images/services/vision-development.jpg',
-    alt: 'Couple standing between walls of bougainvillea in a warmly lit studio set',
+    src: '/assets/images/portfolio/europe/palace-dining-room.webp',
+    alt: 'Long marble dining table dressed for dinner in a chandelier-lit palace dining room',
   },
   /** Design calls for: pillar candles among deep red roses. */
   creativeHouse: {
-    src: '/assets/images/portfolio/africa/night-sparklers.jpeg',
+    src: '/assets/images/portfolio/africa/night-sparklers.webp',
     alt: 'Couple kissing on a checkered dance floor as sparkler fountains light the night',
   },
 } as const;
@@ -55,7 +55,7 @@ export const maisonFaveBrands = [
     href: '/',
     /** Design calls for: bride from behind, long veil, mountains beyond. */
     image: {
-      src: '/assets/images/hero/about-section-background.png',
+      src: '/assets/images/hero/about-section-background.webp',
       alt: 'Bride in a pearl-scattered cathedral veil walking a garden aisle',
     },
   },
@@ -66,7 +66,7 @@ export const maisonFaveBrands = [
     href: '#our-brands',
     /** Design calls for: a styled sitting room — sofa, fireplace, greenery. */
     image: {
-      src: '/assets/images/home/venue-details-collage.jpeg',
+      src: '/assets/images/home/venue-details-collage.webp',
       alt: 'Champagne tower, mirrored signage and a tiered cake styled across a venue',
     },
   },
@@ -77,7 +77,7 @@ export const maisonFaveBrands = [
     href: '#our-brands',
     /** Design calls for: a Maison Fave gift box tied with a burgundy ribbon. */
     image: {
-      src: '/assets/images/portfolio/middle-east/berry-cake-detail.jpeg',
+      src: '/assets/images/portfolio/middle-east/berry-cake-detail.webp',
       alt: 'Berry mille-feuille on a linen table with a red ribbon tied to the cake server',
     },
   },
