@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: '/assets/images/portfolio/middle-east/sunset-violinists.jpeg',
+        url: '/assets/images/brand/og-maison-fave.jpg',
         width: 1200,
         height: 630,
         alt: 'Maison Fave — a creative house',
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
+    images: ['/assets/images/brand/og-maison-fave.jpg'],
   },
 };
 

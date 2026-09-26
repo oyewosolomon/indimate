@@ -27,6 +27,15 @@ export async function generateMetadata(
     alternates: {
       canonical: `/portfolio/${category.slug}`,
     },
+    openGraph: {
+      type: 'website',
+      url: `/portfolio/${category.slug}`,
+      siteName: 'Weddings by Maison Fave',
+      title: `${category.label} Weddings | Weddings by Maison Fave`,
+      description: category.description,
+      locale: 'en_NG',
+      images: [{ url: category.coverImage, alt: category.coverAlt }],
+    },
   };
 }
 

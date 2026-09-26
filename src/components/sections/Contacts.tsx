@@ -29,7 +29,7 @@ const Contacts = () => {
         <div className="relative w-full h-full">
           <Image
             src="/assets/images/contact/section-background.webp"
-            alt="Background"
+            alt="Black-and-white photo of a bride in a long cathedral veil at a garden wedding ceremony"
             fill
             className="object-cover"
             priority

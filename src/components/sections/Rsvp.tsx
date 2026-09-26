@@ -42,7 +42,7 @@ const Rsvp = () => {
         <div className="relative">
           <Image
             src={images[currentSlide]}
-            alt="Wedding couple by a lake"
+            alt="Wedding moment planned and styled by Weddings by Maison Fave"
             width={800}
             height={600}
             className="w-full"

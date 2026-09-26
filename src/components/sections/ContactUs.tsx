@@ -167,7 +167,7 @@ const ContactUs = () => {
         <div className="relative">
           <Image
             src="/assets/images/FAV.webp"
-            alt="Wedding Photographer"
+            alt="Founder of Weddings by Maison Fave, wedding planner in Lagos, Nigeria"
             className="object-contain"
             width={600}
             height={800}
