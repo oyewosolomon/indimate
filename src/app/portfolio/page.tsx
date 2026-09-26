@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 const stripImages = [
-  { src: '/assets/images/portfolio/africa/confetti-skyline.jpeg', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
-  { src: '/assets/images/portfolio/traditional-weddings/royal-attire-portrait.jpeg', alt: 'Couple walking hand in hand across the lawn of a grand French chateau' },
-  { src: '/assets/images/portfolio/middle-east/parasol-desert-arch.jpeg', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
+  { src: '/assets/images/portfolio/africa/confetti-skyline.webp', alt: 'Bride and groom laughing under a shower of confetti beneath a chandelier' },
+  { src: '/assets/images/portfolio/traditional-weddings/royal-attire-portrait.webp', alt: 'Couple walking hand in hand across the lawn of a grand French chateau' },
+  { src: '/assets/images/portfolio/middle-east/parasol-desert-arch.webp', alt: 'Bride’s cathedral veil billowing in the desert wind beside her groom' },
 ];
 
 export default function PortfolioPage() {

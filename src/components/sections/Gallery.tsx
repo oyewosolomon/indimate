@@ -93,7 +93,7 @@ const Gallery = () => {
             </ScrollReveal>
 
             <Image 
-              src="/assets/images/home/private-dining-host.jpg" 
+              src="/assets/images/home/private-dining-host.webp" 
               className='w-full block md:hidden' 
               width={450} 
               height={300} 
@@ -114,7 +114,7 @@ const Gallery = () => {
           </div>
           
           <ParallaxImage 
-            src="/assets/images/home/cocktail-garnish.png" 
+            src="/assets/images/home/cocktail-garnish.webp" 
             alt="Cocktail preparation" 
             className="rounded-lg"
             width={300}
@@ -130,7 +130,7 @@ const Gallery = () => {
        transition={{ duration: 0.8 }}
        className='w-full mx-auto'>
         <Image 
-          src="/assets/images/home/venue-details-collage.jpeg" 
+          src="/assets/images/home/venue-details-collage.webp" 
           alt="Venue Background" 
           width={1200} // native width
           height={600} // native height

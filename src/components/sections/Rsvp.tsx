@@ -6,7 +6,7 @@ import { useState, useCallback, useEffect } from 'react';
 const Rsvp = () => {
   // Define the list of images for the slider
   const images = [
-    '/assets/images/stories/vintage-elegance-champagne-tower.jpeg',
+    '/assets/images/stories/vintage-elegance-champagne-tower.webp',
     // Add more images as needed
   ];
 
