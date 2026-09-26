@@ -61,10 +61,10 @@ export const metadata: Metadata = {
     locale: 'en_NG',
     images: [
       {
-        url: '/assets/images/stories/beachside-union-ceremony-aisle.jpg',
+        url: '/assets/images/brand/og-weddings.jpg',
         width: 1200,
         height: 630,
-        alt: 'Weddings by Maison Fave — destination wedding decor',
+        alt: 'Bride walking down a floral beach wedding aisle styled by Weddings by Maison Fave',
       },
     ],
   },
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/assets/images/stories/beachside-union-ceremony-aisle.jpg'],
+    images: ['/assets/images/brand/og-weddings.jpg'],
   },
   robots: {
     index: true,
@@ -89,7 +89,8 @@ const localBusinessJsonLd = {
   url: siteUrl,
   telephone: '+2348166734100',
   email: 'bookings@weddingsbymaisonfave.com',
-  image: `${siteUrl}/assets/images/brand/logo.png`,
+  image: `${siteUrl}/assets/images/brand/og-weddings.jpg`,
+  logo: `${siteUrl}/assets/images/brand/logo.png`,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',

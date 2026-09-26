@@ -115,7 +115,7 @@ const Gallery = () => {
           
           <ParallaxImage 
             src="/assets/images/home/cocktail-garnish.webp" 
-            alt="Cocktail preparation" 
+            alt="Bartender garnishing signature cocktails at a Lagos wedding reception" 
             className="rounded-lg"
             width={300}
             height={300}
@@ -131,7 +131,7 @@ const Gallery = () => {
        className='w-full mx-auto'>
         <Image 
           src="/assets/images/home/venue-details-collage.webp" 
-          alt="Venue Background" 
+          alt="Wedding details: champagne tower, guestbook phone, welcome sign and tiered white cake" 
           width={1200} // native width
           height={600} // native height
           layout="responsive"

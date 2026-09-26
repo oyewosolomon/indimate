@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/portfolio',
   },
+  openGraph: {
+    type: 'website',
+    url: '/portfolio',
+    siteName: 'Weddings by Maison Fave',
+    title: 'Portfolio | Weddings by Maison Fave',
+    description:
+      'Real weddings planned and designed by Weddings by Maison Fave — from Lagos gardens to European estates, desert celebrations and traditional ceremonies.',
+    locale: 'en_NG',
+    images: [{ url: '/assets/images/brand/og-weddings.jpg', width: 1200, height: 630 }],
+  },
 };
 
 const stripImages = [

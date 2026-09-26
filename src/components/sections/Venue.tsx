@@ -10,7 +10,7 @@ export default function Venue() {
       <div className="absolute inset-0">
         <Image 
           src="/assets/images/home/reception-tablescape.webp" 
-          alt="Venue Background" 
+          alt="Intimate wedding reception tablescape with tropical florals and cocktails" 
           fill
           style={{ objectFit: 'cover' }}
           quality={100} 
