@@ -19,7 +19,7 @@ const NavLinks = () => (
       <Link href="/#aboutus" className='text-black hover:text-green-700'>About us</Link>
       <Link href="/portfolio" className='text-black hover:text-green-700'>Portfolio</Link>
       <Link href="/#testimonial" className='text-black hover:text-green-700'>Testimonial</Link>
-      <Link href="/maison-fave" className='text-black hover:text-green-700'>Maison Fave</Link>
+      <Link href="https://maisonfave.com" className='text-black hover:text-green-700'>Maison Fave</Link>
     </div>
 
   </div>

@@ -73,7 +73,7 @@ const Contacts = () => {
 
         {/* Footer credit — points at the parent creative house. */}
         <Link
-          href="/maison-fave"
+          href="https://maisonfave.com"
           className="text-[10px] lg:text-xs tracking-[0.18em] uppercase text-white/70 hover:text-white whitespace-nowrap"
         >
           &copy; {currentYear} Maison Fave
